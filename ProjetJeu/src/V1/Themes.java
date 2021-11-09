@@ -21,11 +21,11 @@ public class Themes {
 
     // choix de 5 thèmes par l'utilisateur
     public void choixCinqThemes(String theme1, String theme2, String theme3, String theme4, String theme5){
-        this.ids.add(Arrays.asList(choix).indexOf(theme1));
-        this.ids.add(Arrays.asList(choix).indexOf(theme2));
-        this.ids.add(Arrays.asList(choix).indexOf(theme3));
-        this.ids.add(Arrays.asList(choix).indexOf(theme4));
-        this.ids.add(Arrays.asList(choix).indexOf(theme5));
+        this.choixUnTheme(theme1);
+        this.choixUnTheme(theme2);
+        this.choixUnTheme(theme3);
+        this.choixUnTheme(theme4);
+        this.choixUnTheme(theme5);
     }
 
     @Override
