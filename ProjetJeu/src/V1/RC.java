@@ -1,10 +1,10 @@
 package V1;
 
-public class RC{
+public class RC extends Question{
     private String bonne_rep;
-    private String text;
-    public RC(String text, String good_rep){
-        this.text=text;
+    
+    public RC(String text, Themes theme, int difficulte, String good_rep){
+    	super(text,theme,difficulte);
         this.bonne_rep=good_rep;
     }
 }

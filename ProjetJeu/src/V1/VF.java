@@ -1,10 +1,10 @@
 package V1;
 
-public class VF{
+public class VF extends Question{
     private boolean bonne_rep;
-    private String text;
-    public VF(String text, boolean good_rep){
-        this.text=text;
+    
+    public VF(String text, Themes theme, int difficulte, boolean good_rep){
+    	super(text,theme,difficulte);
         this.bonne_rep=good_rep;
     }
 }
