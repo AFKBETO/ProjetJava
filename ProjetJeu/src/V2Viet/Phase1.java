@@ -1,4 +1,4 @@
-package V1;
+package V2Viet;
 
 public class Phase1 implements Phase {
     public void selectionJoueur() {

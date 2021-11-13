@@ -1,4 +1,4 @@
-package V1;
+package V2Viet;
 
 public class Joueur {
     private int numero;

@@ -1,4 +1,4 @@
-package V1;
+package V2Viet;
 
 public class Test {
     public static void main(String[] args){

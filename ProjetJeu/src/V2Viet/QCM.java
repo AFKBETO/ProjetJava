@@ -1,4 +1,4 @@
-package V1;
+package V2Viet;
 
 public class QCM extends Question {
     private final String rep1, rep2, rep3;
