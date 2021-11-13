@@ -13,7 +13,7 @@ public abstract class Question {
         this.text=text;
         this.theme=theme;
         this.difficulte=difficulte;
-        this.idQuestion=++count;
+        this.idQuestion=count++;
     }
     
     @Override
