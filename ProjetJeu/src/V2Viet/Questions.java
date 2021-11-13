@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Questions {
-    private String text;
-    private String theme;
-    private int numQuestion;
-    private ArrayList<String> questions = new ArrayList<String>();
-    public Questions(String text){
-        this.text=text;
+    private ArrayList<Question> questions = new ArrayList<Question>();
+    public Questions(Question question){
+        this.addQuestion(question);
     }
 
     // Ajout de question
-    public void addQuestion(String question){
+    public void addQuestion(Question question){
         questions.add(question);
     }
 
@@ -22,20 +19,21 @@ public class Questions {
     }
 
     //renvoie une question
-    public String getUneQuestion(){
+    public Question getUneQuestion(){
         Random random = new Random();
         int nb;
-        nb = random.nextInt(numQuestion);
+        nb = random.nextInt(questions.size());
         return questions.get(nb);
     }
 
     // renvoie deux questions
-    public ArrayList<String> getDeuxQuestions(){
-        ArrayList<String> tab = new ArrayList<String>();
-        Random random = new Random();
-        int nb;
-        nb = random.nextInt(numQuestion);
-        tab.add(questions.get(nb));
+    public Question[] getDeuxQuestions(){
+        Question[] tab = new Question[2];
+        tab[0] = this.getUneQuestion();
+        tab[1] = this.getUneQuestion();
+        while(tab[0]==tab[1]) {
+        	tab[1] = this.getUneQuestion();
+        }
 
         return tab;
     }

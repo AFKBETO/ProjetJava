@@ -12,14 +12,18 @@ public abstract class Question {
     public Question(String text, Themes theme, int difficulte){
         this.text=text;
         this.theme=theme;
-        this.difficulte=difficulte;
+        this.difficulte = difficulte;
         this.idQuestion=count++;
     }
+    
+    public abstract void saisieQuestion();
     
     @Override
     public String toString() {
     	StringBuilder s = new StringBuilder("Question no : " + this.idQuestion);
     	s.append("\n"+ this.theme.toString());
+    	s.append("\nDifficulté : "+ this.difficulte);
+    	s.append("\nEnoncé : "+ this.text);
     	return s.toString();
     }
 }

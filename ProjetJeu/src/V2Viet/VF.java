@@ -7,4 +7,17 @@ public class VF extends Question{
     	super(text,theme,difficulte);
         this.bonne_rep=good_rep;
     }
+    
+    @Override
+    public String toString() {
+    	StringBuilder s = new StringBuilder(super.toString());
+    	s.append("\nVrai/Faux?");    	
+    	return s.toString();
+    }
+
+	@Override
+	public void saisieQuestion() {
+		// TODO Auto-generated method stub
+		
+	}
 }

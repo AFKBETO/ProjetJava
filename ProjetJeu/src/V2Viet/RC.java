@@ -7,4 +7,9 @@ public class RC extends Question{
     	super(text,theme,difficulte);
         this.bonne_rep=good_rep;
     }
+
+	@Override
+	public void saisieQuestion() {
+		
+	}
 }
