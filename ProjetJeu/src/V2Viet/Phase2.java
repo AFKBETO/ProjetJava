@@ -1,8 +1,4 @@
-package V1;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Random;
+package V2Viet;
 
 import java.util.ArrayList;
 import java.util.Comparator;
