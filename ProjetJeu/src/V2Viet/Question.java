@@ -17,6 +17,8 @@ public abstract class Question {
         this.idQuestion=count++;
         this.selectionee = false;
     }
+    
+    //Constructeur sans Theme - pour tester sans thème
     public Question(String text, int difficulte){
         this.text=text;
         this.difficulte = difficulte;
@@ -38,10 +40,11 @@ public abstract class Question {
     
     public abstract void saisieQuestion();
     
+    //méthode toString de base
     @Override
     public String toString() {
     	StringBuilder s = new StringBuilder("Question no : " + this.idQuestion);
-    	//s.append("\n"+ this.theme.toString());
+    	//s.append("\n"+ this.theme.toString()); //mis en commentaire pour tester sans thème
     	s.append("\nDifficulté : "+ this.difficulte);
     	s.append("\nEnoncé : "+ this.text);
     	return s.toString();

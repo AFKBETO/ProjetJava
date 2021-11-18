@@ -12,6 +12,7 @@ public class QCM extends Question {
         this.reps[2] = r2;
 		this.bonne_rep = bonne_rep;
     }
+    //constructeur sans Theme
     public QCM(String text, int difficulte, String r0, String r1, String r2, int bonne_rep){
         super(text,difficulte);
         this.reps[0] = r0;
@@ -20,6 +21,7 @@ public class QCM extends Question {
 		this.bonne_rep = bonne_rep;
     }
     
+    //toString pour ajouter des réponses de QCM
     @Override
     public String toString(){
     	StringBuilder s = new StringBuilder(super.toString());
@@ -28,6 +30,7 @@ public class QCM extends Question {
     		s.append("\nRéponse "+ i + " : "+ rep);
     		i++;
     	}
+    	s.append("\n");
     	
     	return s.toString();
     }

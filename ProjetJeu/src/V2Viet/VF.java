@@ -7,17 +7,18 @@ public class VF extends Question{
     	super(text,theme,difficulte);
         this.bonne_rep=good_rep;
     }
-    
+    //Constructeur sans Theme
     public VF(String text, int difficulte, boolean good_rep){
     	super(text,difficulte);
         this.bonne_rep=good_rep;
     }
     
+    //toString qui ajoute vrai/faux
     @Override
     public String toString() {
-    	StringBuilder s = new StringBuilder(super.toString());
+    	StringBuilder s = new StringBuilder();
     	s.append("\nVrai/Faux?");    	
-    	return s.toString();
+    	return super.toString() + "\nVrai/Faux ?\n";
     }
 
 	@Override
