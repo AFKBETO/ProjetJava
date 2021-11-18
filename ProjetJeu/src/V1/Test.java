@@ -1,5 +1,11 @@
 package V1;
 
+import V2Viet.QCM;
+import V2Viet.Question;
+import V2Viet.Questions;
+import V2Viet.RC;
+import V2Viet.VF;
+
 import java.util.ArrayList;
 
 public class Test {
@@ -21,5 +27,17 @@ public class Test {
         Phase3 t3 = new Phase3(); // début phase 2
         t3.selectionJoueur(j4); // classement score, avant dernier -> perdant et les autres super-gagnants
         System.out.println(j);
+
+        V2Viet.Question q1 = new QCM("ABC",1,"A","B","C",0);
+        V2Viet.Question q2 = new RC("DEF",2,"SSS");
+        Question q3 = new VF("GHI",3,true);
+
+        V2Viet.Questions questions = new Questions(q1);
+        questions.addQuestion(q2);
+        questions.addQuestion(q3);
+
+        System.out.println(q1);
+        System.out.println(q2);
+        System.out.println(q3);
     }
 }
