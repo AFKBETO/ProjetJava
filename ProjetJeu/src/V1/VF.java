@@ -1,7 +1,7 @@
 package V1;
 
 public class VF extends Question{
-    private boolean bonne_rep;
+    private final boolean bonne_rep;
 
     public VF(String text, ListeThemes theme, int difficulte, boolean good_rep){
         super(text,theme,difficulte);

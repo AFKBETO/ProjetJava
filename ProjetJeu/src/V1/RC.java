@@ -1,7 +1,7 @@
 package V1;
 
 public class RC extends Question{
-    private String bonne_rep;
+    private final String bonne_rep;
 
     public RC(String text, ListeThemes theme, int difficulte, String good_rep){
         super(text,theme,difficulte);

@@ -3,7 +3,7 @@ package V1;
 import java.util.ArrayList;
 
 public abstract class Question {
-    private String text;
+    private final String text;
     private ListeThemes theme;
     private final int idQuestion;
     private final int difficulte;
