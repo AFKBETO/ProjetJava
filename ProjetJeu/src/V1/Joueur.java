@@ -30,4 +30,8 @@ public class Joueur{
     public int getNum(){
         return ID;
     }
+
+    public int getScore(){
+        return score;
+    }
 }
