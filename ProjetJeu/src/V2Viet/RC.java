@@ -1,26 +1,26 @@
-package V2Viet;
+package V1;
 
 public class RC extends Question{
-    private String bonne_rep;
-    
+    private final String bonne_rep;
+
     public RC(String text, ListeThemes theme, int difficulte, String good_rep){
-    	super(text,theme,difficulte);
+        super(text,theme,difficulte);
         this.bonne_rep=good_rep;
     }
     //constructeur sans Theme
     public RC(String text, int difficulte, String good_rep){
-    	super(text,difficulte);
+        super(text,difficulte);
         this.bonne_rep=good_rep;
     }
-    
-    //toString qui ajoute Réponse :
+
+    //toString qui ajoute Rï¿½ponse :
     @Override
     public String toString() {
-    	return super.toString() + "\nRéponse :\n";
+        return super.toString() + "\nRÃ©ponse :\n";
     }
-    
-	@Override
-	public void saisieQuestion() {
-		
-	}
+
+    @Override
+    public void saisieQuestion() {
+
+    }
 }
