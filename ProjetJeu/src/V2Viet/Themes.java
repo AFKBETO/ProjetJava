@@ -5,40 +5,36 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Themes {
-    private ArrayList<ListeThemes> themes = new ArrayList<ListeThemes>();
-    private static int indicateur;
+    private String nom;
+    //private int id;
+    //private int[] ids;
+    private ArrayList<Integer> ids = new ArrayList<Integer>();
 
-    public Themes(){
-    	for (ListeThemes theme:ListeThemes.values()) {
-    		this.themes.add(theme);
-    	};
-    }
+    private String[] choix = {"Sciences", "Litt√©rature","Sport","Histoire","Math√©matiques","Langues","Culture G√©n√©rale"};
+    public Themes(){}
 
-    // choix d'un thËme par l'utilisateur
-    public ListeThemes choixUnTheme(String theme){
-        int id = Arrays.asList(themes).indexOf(ListeThemes.valueOf(theme)); // assignation de l'id
-        if (id == indicateur) {
-        	System.out.println("ThËme dÈj‡ choisie, choissisez une autre.");
-        	return null;
-        }
-        indicateur = id;
-        return themes.get(id);
+    // choix d'un th√®me par l'utilisateur
+    public void choixUnTheme(String theme){
+        this.ids.add(Arrays.asList(choix).indexOf(theme)); // assignation de l'id du theme correspondant au th√®me saisit
         //System.out.println(id);
     }
 
     // choix de 5 th√®mes par l'utilisateur
-    public ListeThemes[] choixCinqThemes(String[] themes){
-        ListeThemes[] results = new ListeThemes[5];
-    	return results;
+    public void choixCinqThemes(String theme1, String theme2, String theme3, String theme4, String theme5){
+        this.choixUnTheme(theme1);
+        this.choixUnTheme(theme2);
+        this.choixUnTheme(theme3);
+        this.choixUnTheme(theme4);
+        this.choixUnTheme(theme5);
     }
 
     @Override
     public String toString(){
-        String res= "ThËmes : ";
-        Collections.sort(themes);  // Sort choix
+        String res= "th√®mes : ";
+        Collections.sort(ids);  // Sort choix
 
-        for (ListeThemes i : themes) {
-            //res=res+"id : "+ Array.asList(themes).indexOf(i).toString()+" nom : "+ i+ ", ";
+        for (int i : ids) {
+            res=res+"id : "+(i+1)+" nom : "+choix[i]+ ", ";
         }
         return res;
     }
