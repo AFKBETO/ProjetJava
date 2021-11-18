@@ -1,5 +1,6 @@
 package V1;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 public abstract class Question {
@@ -10,20 +11,20 @@ public abstract class Question {
     private static int count = 0;
     private boolean selectionee;
 
-    public Question(String text, ListeThemes theme, int difficulte){
+    //Constructeur sans Theme - pour tester sans thème
+    public Question (String text, int difficulte) throws InvalidParameterException {
+        if(difficulte<1 || difficulte>3){
+            throw new InvalidParameterException("Niveau de difficulté doit être une valeur entre 1 et 3");
+        }
         this.text=text;
-        this.theme=theme;
         this.difficulte = difficulte;
         this.idQuestion=count++;
         this.selectionee = false;
     }
-
-    //Constructeur sans Theme - pour tester sans thème
-    public Question(String text, int difficulte){
-        this.text=text;
-        this.difficulte = difficulte;
-        this.idQuestion=count++;
-        this.selectionee = false;
+    //Constructeur avec Theme
+    public Question(String text, ListeThemes theme, int difficulte){
+        this(text,difficulte);
+        this.theme=theme;
     }
 
     public int getID() {
