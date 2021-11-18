@@ -25,7 +25,7 @@ public class QCM extends Question {
         StringBuilder s = new StringBuilder(super.toString());
         int i = 1;
         for(String rep : this.reps) {
-            s.append("\nR�ponse "+ i + " : "+ rep);
+            s.append("\nRéponse "+ i + " : "+ rep);
             i++;
         }
         s.append("\n");
