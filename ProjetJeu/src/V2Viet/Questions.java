@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Questions {
     private ArrayList<Question> questions = new ArrayList<Question>();
+    
     public Questions(Question question){
         this.addQuestion(question);
     }
@@ -23,6 +24,10 @@ public class Questions {
         Random random = new Random();
         int nb;
         nb = random.nextInt(questions.size());
+        while(questions.get(nb).estPosee()) {
+        	nb = random.nextInt(questions.size());
+        }
+        questions.get(nb).choisi();
         return questions.get(nb);
     }
 
@@ -31,10 +36,6 @@ public class Questions {
         Question[] tab = new Question[2];
         tab[0] = this.getUneQuestion();
         tab[1] = this.getUneQuestion();
-        while(tab[0]==tab[1]) {
-        	tab[1] = this.getUneQuestion();
-        }
-
         return tab;
     }
 }
