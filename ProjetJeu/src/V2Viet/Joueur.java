@@ -1,4 +1,4 @@
-package V2Viet;
+package V1;
 
 public class Joueur{
     private int ID = 100;
