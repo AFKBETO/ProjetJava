@@ -1,7 +1,5 @@
 package V1;
 
-import V2Viet.ListeThemes;
-
 public class RC extends Question{
     private String bonne_rep;
 

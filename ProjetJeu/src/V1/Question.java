@@ -1,7 +1,5 @@
 package V1;
 
-import V2Viet.ListeThemes;
-
 import java.util.ArrayList;
 
 public abstract class Question {

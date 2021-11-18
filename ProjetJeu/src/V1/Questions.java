@@ -1,7 +1,5 @@
 package V1;
 
-import V2Viet.Question;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -34,10 +32,10 @@ public class Questions {
     }
 
     // renvoie deux questions
-    public Question[] getDeuxQuestions(){
-        V2Viet.Question[] tab = new Question[2];
-        tab[0] = this.getUneQuestion();
-        tab[1] = this.getUneQuestion();
-        return tab;
+    public ArrayList<Question> getDeuxQuestions(){
+        ArrayList<Question> questions = new ArrayList<Question>();
+        questions.add(this.getUneQuestion());
+        questions.add(this.getUneQuestion());
+        return questions;
     }
 }

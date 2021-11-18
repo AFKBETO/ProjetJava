@@ -1,7 +1,5 @@
 package V1;
 
-import V2Viet.ListeThemes;
-
 public class QCM extends Question {
     private final String[] reps = new String[3];
     private final int bonne_rep;
