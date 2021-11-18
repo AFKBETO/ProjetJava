@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Themes {
-    private final ArrayList<Integer> ids = new ArrayList<>();
+    private String nom;
+    //private int id;
+    //private int[] ids;
+    private ArrayList<Integer> ids = new ArrayList<Integer>();
 
-    private final String[] choix = {"Sciences", "Littérature", "Sport", "Histoire", "Mathématiques", "Langues",
-            "Culture Générale"};
+    private String[] choix = {"Sciences", "Littérature","Sport","Histoire","Mathématiques","Langues","Culture Générale"};
     public Themes(){}
 
     // choix d'un thème par l'utilisateur
@@ -28,12 +30,13 @@ public class Themes {
 
     @Override
     public String toString(){
-        StringBuilder res= new StringBuilder("Thèmes :\n");
+        String res= "thèmes : ";
         Collections.sort(ids);  // Sort choix
+
         for (int i : ids) {
-            res.append("ID:").append(i + 1).append(" - ").append(choix[i]).append("\n");
+            res=res+"id : "+(i+1)+" nom : "+choix[i]+ ", ";
         }
-        return res.toString();
+        return res;
     }
 
 }
