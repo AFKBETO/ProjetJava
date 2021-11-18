@@ -12,9 +12,9 @@ public abstract class Question {
     private boolean selectionee;
 
     //Constructeur sans Theme - pour tester sans thème
-    public Question (String text, int difficulte) throws InvalidParameterException {
+    public Question (String text, int difficulte) throws IllegalArgumentException {
         if(difficulte<1 || difficulte>3){
-            throw new InvalidParameterException("Niveau de difficulté doit être une valeur entre 1 et 3");
+            throw new IllegalArgumentException("Niveau de difficulté doit être une valeur entre 1 et 3");
         }
         this.text=text;
         this.difficulte = difficulte;
@@ -25,6 +25,11 @@ public abstract class Question {
     public Question(String text, ListeThemes theme, int difficulte){
         this(text,difficulte);
         this.theme=theme;
+    }
+    //Constructeur avec string Theme
+    public Question(String text, String theme, int difficulte){
+
+        this(text,ListeThemes.valueOf(theme) ,difficulte);
     }
 
     public int getID() {

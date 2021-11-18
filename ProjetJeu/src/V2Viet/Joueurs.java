@@ -1,31 +1,53 @@
-package V2Viet;
+package V1;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Joueurs {
-    private Joueur[] joueurs = new Joueur[20];
-    public Joueurs(){
-        for(int i = 0;i<joueurs.length;i++){
+    private final int totPlayers = 20;
+    private final int nbrPlayers = 4;
+    private final ArrayList<Joueur> joueurs = new ArrayList<>(totPlayers);
+    private final ArrayList<Joueur> j4 = new ArrayList<>(nbrPlayers);
 
+    public Joueurs() {
+        for(int i = 0; i < totPlayers; i++)
+        {
+            joueurs.add(new Joueur("MV" + ((i + 10) * 10), "en attente", 0));
+            joueurs.get(i).updateNum(i);
         }
-        selectJoueurs();
     }
 
-    public void selectJoueurs(){
-        int numberOfElements = 4;
-        Random rd = new Random(); // creating Random object
-        int[] arr = new int[numberOfElements];
-        for (int i = 0; i < numberOfElements; i++) {
-            arr[i] = rd.nextInt(); // storing random integers in an array
-            System.out.println(arr[i]); // printing each array element
+    public ArrayList<Joueur> selectJoueurs() {
+        j4.add(joueurs.get(new Random().nextInt(20)));
+        int curr = 1;
+        label: while (curr < nbrPlayers) {
+            int Rdcurr = new Random().nextInt(20);
+            for (int j = 0; j < curr; j++) {
+                if (joueurs.get(Rdcurr).getNum() == j4.get(j).getNum()){
+                    continue label;
+                }
+            }
+            j4.add(joueurs.get(Rdcurr));
+            curr++;
         }
-        System.out.println(arr);
+        return j4;
     }
 
-    public Joueur selectUnJoueur(){
-        Random random = new Random();
-        int nb = random.nextInt(20);
-        return joueurs[nb];
+    @Override
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        for (Joueur joueur : j4) {
+            res.append(joueur).append("\n");
+        }
+        return res.toString();
+    }
+
+    public String seeAllPlayers()
+    {
+        StringBuilder res = new StringBuilder();
+        for (Joueur joueur : joueurs) {
+            res.append(joueur).append("\n");
+        }
+        return res.toString();
     }
 }

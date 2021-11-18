@@ -1,6 +1,8 @@
-package V2Viet;
+package V1;
+
+import java.util.ArrayList;
 
 public interface Phase {
-    public void selectionJoueur();
+    public void selectionJoueur(ArrayList<Joueur> j);
     public void deroulerPhaseJeu();
 }
