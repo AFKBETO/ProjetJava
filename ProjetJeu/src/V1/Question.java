@@ -49,10 +49,7 @@ public abstract class Question {
     //méthode toString de base
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder("Question no : " + this.idQuestion);
-        //s.append("\n"+ this.theme.toString()); //mis en commentaire pour tester sans thème
-        s.append("\nDifficulté : "+ this.difficulte);
-        s.append("\nEnoncé : "+ this.text);
-        return s.toString();
+        return "Question no : " + this.idQuestion + "\nDifficulté : " + this.difficulte +
+                "\nEnoncé : " + this.text;
     }
 }

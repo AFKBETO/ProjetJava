@@ -3,9 +3,10 @@ package V1;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Themes {
-    private final ArrayList<Integer> ids = new ArrayList<>();
+    private final List<Integer> ids = new ArrayList<>();
 
     private final String[] choix = {"Sciences", "Littérature", "Sport", "Histoire", "Mathématiques", "Langues",
             "Culture Générale"};

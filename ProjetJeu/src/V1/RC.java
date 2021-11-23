@@ -16,7 +16,7 @@ public class RC extends Question{
     //toString qui ajoute R�ponse :
     @Override
     public String toString() {
-        return super.toString() + "\nRéponse :\n";
+        return super.toString() + "\nRéponse : A trouver\n";
     }
 
     @Override

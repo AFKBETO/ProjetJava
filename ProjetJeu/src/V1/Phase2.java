@@ -2,10 +2,11 @@ package V1;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Random;
 
 public class Phase2 implements Phase {
-    public void selectionJoueur(ArrayList<Joueur> j3) {
+    public void selectionJoueur(List<Joueur> j3) {
         for (Joueur joueur : j3) {
             joueur.majScore(new Random().nextInt(20));
         } //donne un score aléa pour faire des tests, à supprimer quand le système de pts est en place

@@ -1,9 +1,10 @@
 package V1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class QCM extends Question {
-    private final ArrayList<String> reps = new ArrayList<String>();
+    private final List<String> reps = new ArrayList<>();
     private final int bonne_rep;
     public QCM(String text, ListeThemes theme, int difficulte, String r0, String r1, String r2, int bonne_rep){
         super(text,theme,difficulte);
@@ -26,7 +27,7 @@ public class QCM extends Question {
     public String toString(){
         StringBuilder s = new StringBuilder(super.toString());
         for(String rep : this.reps) {
-            s.append("\nRéponse "+ String.valueOf(reps.indexOf(rep)+1) + " : "+ rep);
+            s.append("\nRéponse ").append(String.valueOf(reps.indexOf(rep) + 1)).append(" : ").append(rep);
         }
         s.append("\n");
 

@@ -1,13 +1,14 @@
 package V1;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Joueurs {
     private final int totPlayers = 20;
     private final int nbrPlayers = 4;
-    private final ArrayList<Joueur> joueurs = new ArrayList<>(totPlayers);
-    private final ArrayList<Joueur> j4 = new ArrayList<>(nbrPlayers);
+    private final List<Joueur> joueurs = new ArrayList<>(totPlayers);
+    private final List<Joueur> j4 = new ArrayList<>(nbrPlayers);
 
     public Joueurs() {
         for(int i = 0; i < totPlayers; i++)
@@ -17,7 +18,7 @@ public class Joueurs {
         }
     }
 
-    public ArrayList<Joueur> selectJoueurs() {
+    public List<Joueur> selectJoueurs() {
         j4.add(joueurs.get(new Random().nextInt(20)));
         int curr = 1;
         label: while (curr < nbrPlayers) {

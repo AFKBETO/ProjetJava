@@ -16,14 +16,11 @@ public class VF extends Question{
     //toString qui ajoute vrai/faux
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder();
-        s.append("\nVrai/Faux?");
-        return super.toString() + "\nVrai/Faux ?\n";
+        return super.toString() + "\nRéponse : Vrai ou Faux\n";
     }
 
     @Override
     public void saisieQuestion() {
         // TODO Auto-generated method stub
-
     }
 }

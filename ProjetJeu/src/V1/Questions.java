@@ -1,13 +1,13 @@
 package V1;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Questions {
-    private ArrayList<Question> questions = new ArrayList<Question>();
+    private List<Question> questions = new ArrayList<>();
 
-    public Questions(Question question){
-        this.addQuestion(question);
+    public Questions(){
     }
 
     // Ajout de question
@@ -32,8 +32,8 @@ public class Questions {
     }
 
     // renvoie deux questions
-    public ArrayList<Question> getDeuxQuestions(){
-        ArrayList<Question> questions = new ArrayList<Question>();
+    public List<Question> getDeuxQuestions(){
+        List<Question> questions = new ArrayList<>();
         questions.add(this.getUneQuestion());
         questions.add(this.getUneQuestion());
         return questions;

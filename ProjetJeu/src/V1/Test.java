@@ -1,6 +1,6 @@
 package V1;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
     public static void main(String[] args){
@@ -10,7 +10,7 @@ public class Test {
         System.out.println(t);
 
         Joueurs j = new Joueurs(); //création 20joueurs
-        ArrayList<Joueur> j4 = j.selectJoueurs();//sélection 4 joueurs
+        List<Joueur> j4 = j.selectJoueurs();//sélection 4 joueurs
         Phase1 t1 = new Phase1(); // début phase 1
         t1.selectionJoueur(j4); // ajout 4 joueurs à la phase 1 (changement de leur etat)
         System.out.println(j);
@@ -26,7 +26,8 @@ public class Test {
         Question q2 = new RC("DEF",2,"SSS");
         Question q3 = new VF("GHI",3,true);
 
-        Questions questions = new Questions(q1);
+        Questions questions = new Questions();
+        questions.addQuestion(q1);
         questions.addQuestion(q2);
         questions.addQuestion(q3);
 
