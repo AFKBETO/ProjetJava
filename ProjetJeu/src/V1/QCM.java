@@ -6,7 +6,7 @@ import java.util.List;
 public class QCM extends Question {
     private final List<String> reps = new ArrayList<>();
     private final int bonne_rep;
-    public QCM(String text, ListeThemes theme, int difficulte, String r0, String r1, String r2, int bonne_rep){
+    public QCM(int difficulte, String text, Themes theme, String r0, String r1, String r2, int bonne_rep){
         super(text,theme,difficulte);
         this.reps.add(r0);
         this.reps.add(r1);
@@ -14,7 +14,7 @@ public class QCM extends Question {
         this.bonne_rep = bonne_rep;
     }
     //constructeur sans Theme
-    public QCM(String text, int difficulte, String r0, String r1, String r2, int bonne_rep){
+    public QCM(int difficulte, String text, String r0, String r1, String r2, int bonne_rep){
         super(text,difficulte);
         this.reps.add(r0);
         this.reps.add(r1);
@@ -25,18 +25,17 @@ public class QCM extends Question {
     //toString pour ajouter des r�ponses de QCM
     @Override
     public String toString(){
-        StringBuilder s = new StringBuilder(super.toString());
-        for(String rep : this.reps) {
-            s.append("\nRéponse ").append(String.valueOf(reps.indexOf(rep) + 1)).append(" : ").append(rep);
+        StringBuilder s = new StringBuilder(super.toString() + "\n");
+        int acc = 1;
+        for(String rep : reps) {
+            s.append(acc).append(" - ").append(rep).append("\n");
+            acc++;
         }
-        s.append("\n");
-
+        s.append("\n").append("QCM - Taper 1, 2 ou 3 pour sélectionner votre réponse :");
         return s.toString();
     }
 
-    @Override
-    public void saisieQuestion() {
-        // TODO Auto-generated method stub
-
+    public String checkAnswer(){
+        return String.valueOf(bonne_rep);
     }
 }

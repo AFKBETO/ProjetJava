@@ -1,0 +1,3 @@
+QCM|3|L'or, comme tout élément natif est ?|Très rare et cher|Composé d'un seul élément chimique|Très beau visuellement|2
+VF|3|Le lapis-lazuli est un très beau minéral ?|false
+RC|3|Une sodalite est un minéral de couleur ?|Bleue

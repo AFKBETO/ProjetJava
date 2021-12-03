@@ -1,0 +1,4 @@
+VF|1|La lithosphère océanique est constituée de basaltes, gabbros et péridotites ?|true
+QCM|1|Dans une chaîne de montagne issue d’une collision existe un assemblage de roches appelé ?|ophiolites|gabbros|serpentinites|2
+RC|1|Quel minéral peut se former en dehors des zones de subduction ?|Chlorite
+VF|1|Une subduction océanique peut être formée à la suite d'un tremblement de terre ?|false

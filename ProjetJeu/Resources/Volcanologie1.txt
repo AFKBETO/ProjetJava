@@ -1,0 +1,5 @@
+QCM|1|Combien de volcans y a-t-il dans le monde ?|10 000|30 000|On ne sait pas|3
+RC|1|A un moment donné, quelle est la moyenne de volcans qui sont en éruption ?|20
+VF|1|Les champs volcaniques comprennent que quelques centres éruptifs individuels ?|false
+VF|1|Un volcan a forcément du magma en son sein ?|false
+

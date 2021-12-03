@@ -1,0 +1,3 @@
+VF|2|Le diamant est le seul minéral capable de se rayer lui-même ?|true
+QCM|2|Laquelle des ces classes minéralogiques est la plus représentée à la surface terrestre ?|Les sulfures|Les carbonates|Les silicates|3
+RC|2|Un système cristallin qui change est caractéristique d'un minéral ?|Polymorphe

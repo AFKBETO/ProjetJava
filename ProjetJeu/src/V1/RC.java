@@ -3,12 +3,12 @@ package V1;
 public class RC extends Question{
     private final String bonne_rep;
 
-    public RC(String text, ListeThemes theme, int difficulte, String good_rep){
+    public RC(int difficulte, String text, Themes theme, String good_rep){
         super(text,theme,difficulte);
         this.bonne_rep=good_rep;
     }
     //constructeur sans Theme
-    public RC(String text, int difficulte, String good_rep){
+    public RC(int difficulte, String text, String good_rep){
         super(text,difficulte);
         this.bonne_rep=good_rep;
     }
@@ -16,11 +16,10 @@ public class RC extends Question{
     //toString qui ajoute R�ponse :
     @Override
     public String toString() {
-        return super.toString() + "\nRéponse : A trouver\n";
+        return super.toString() + "\nRéponse : à trouver\n" + "RC - Ecrivez ce que vous jugez être la réponse :";
     }
 
-    @Override
-    public void saisieQuestion() {
-
+    public String checkAnswer(){
+        return bonne_rep;
     }
 }

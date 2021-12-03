@@ -1,0 +1,4 @@
+QCM|1|Qu’est-ce que le platine ?|Un alliage d’or, d’argent et de zinc|Un métal précieux fait d’argent recouvert d’or|Un métal noble de couleur gris blanc|3
+RC|1|De quel pays proviennent les 95 % de la production mondiale d’opales ?|Australie
+VF|1|Le diamant n'est pas la gemme la plus précieuse|false
+VF|1|Le topaze est une gemme bleue ?|false

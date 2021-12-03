@@ -1,0 +1,4 @@
+QCM|1|Quelle civilisation est à l'origine de Knossos ?|Les Minoens|Les Mycéniens|Les Thraces|1
+RC|1|Banteay Srei, le temple des femmes fait partie du complexe d'Angkor, construit par les ?|Khmers
+VF|1|Le temple d'Edfou est en Iran|false
+VF|1|Une tablette de Nefertiti a été retrouvée en Grèce ?|false

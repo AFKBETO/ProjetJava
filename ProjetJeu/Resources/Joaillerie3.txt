@@ -1,0 +1,3 @@
+VF|3|Un jonc est un type de chevalière ?|false
+QCM|3|Quelle pierre est de la famille des olivines ?|Péridot|Basalte|Corindon|1
+RC|3|L'obsidienne est une roche ?|volcanique

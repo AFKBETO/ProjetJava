@@ -1,0 +1,4 @@
+QCM|1|La sédimentologie est une science dont le but est ?|D'étudier la succession des dépôts sédimentaires|De reconstituer la paléogéographie (ex : position des continents)|De reconstituer les paléoenvironnements|3
+VF|1|Une particule sédimentaire qui mesure 20 µm s’appelle du limon ?|true
+RC|1|Quelle est la méthode d'étude qui permet de déterminer la taille des sédiments ?|Granulométrie
+VF|1|Les sédiments sont un agglomérat d'organisme vivant aquatique ?|false

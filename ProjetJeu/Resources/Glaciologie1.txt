@@ -1,0 +1,4 @@
+VF|1|Les glaciologues se préoccupent de déterminer les principales caractéristiques des surfaces englacées ?|true
+VF|1|La glaciologie est une science de la Terre qui étudie la nature physique et chimique des systèmes glaciaires et périglaciaires|true
+VF|1|Une grande partie des échantillons de glace sont prélevés sur des patates de glace|false
+VF|1|L'étude des flocons de neige aide à comprendre des structures givrées ?|false

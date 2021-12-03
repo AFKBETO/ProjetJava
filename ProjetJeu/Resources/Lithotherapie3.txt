@@ -1,0 +1,3 @@
+QCM|3|Je remédie aux douleurs articulaires ?|Malachite|Rhodonite|Cristal de roche|1
+VF|3|La druse d'améthyste est utilisée pour recharger les pierres ?|false
+RC|3|On m'utilise pour cicatriser une plaie. Je suis ?|Hématite

@@ -1,0 +1,32 @@
+C'est un jeu de Questions / Réponses entre au moins 4 joueurs au début du jeu. 
+Les joueurs sont éliminés à travers les différentes phases du jeu jusqu’à ce 
+qu’il ne reste plus qu’un seul gagnant. Le jeu se base sur une liste de questions 
+auxquelles les candidats doivent répondre à tour de rôle. En fonction des réponses, 
+un score est cumulé pour chaque joueur et les candidats ayant les meilleurs scores 
+sont sélectionnés pour les phases suivantes.
+
+Pour chaque joueur un timer régi par un Thread est associé. Il démarre lorsque
+son joueur obtient la main pour répondre à la question, et s’arrête dès que la
+réponse est fournie. En cas d’égalité de scores entre les joueurs à une phase 
+donnée, ils seront départagés grâce aux valeurs des timers. Ainsi, les 
+joueurs ayant été les plus rapides seront ceux qui se qualifient à la phase d’après. 
+
+Trois types de questions sont possibles :
+- QCM est décrite par un texte, 3 variables de réponses proposées et une variable bonne réponse : 1, 2 ou 3. 
+- VF est décrite par son texte et sa bonne réponse de type booléen : true ou false.
+- RC est décrite par son texte et une variable bonne réponse de type chaîne de caractères : 
+Cette chaîne de caractère consiste  en un seul mot, ce dernier commençant par une majuscule et pouvant contenir des accents.
+Les questions traitent au moins 10 thèmes et sont de 3 types différents et les questions ont 3 niveaux de difficulté :
+- 1 : Niveau facile
+- 2 : Niveau moyen
+- 3 : Niveau difficile
+
+Une partie de jeu se déroule en plusieurs phases et sur 10 thèmes différents.
+A chaque phase, un nombre de joueurs ayant les plus faibles scores est éliminé et les autres sont sélectionnés pour la phase qui suit.
+Phase I : une question de niveau facile est sélectionnée pour chacun des joueurs et les questions porteront sur 1 thème. +2/q
+Phase II : deux questions de niveau moyen par thème pour chaque joueur et les questions porteront sur 6 thèmes. +3/q
+Phase III : deux questions de niveau difficile porteront sur trois thème et les questions porteront sur les 3 thèmes restants. +5/q
+
+Le grand jeu :
+3 groupes de 4 joueurs dont les trois joueurs gagnants sont recuperés.
+La même politique est reprise commençant à la phase II avec ces trois joueurs.

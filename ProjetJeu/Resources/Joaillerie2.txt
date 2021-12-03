@@ -1,0 +1,3 @@
+VF|2|C'est en 1640 que la haute joaillerie voit le jour avec Jules Mazarin, qui crée un diamant spécial a 32 faces ?|true
+QCM|2|A quelle valeur est estimée la tiare commandée par la princesse Katharina Henckel von Donnersmarck dans les années 1900?|1,27 millions de dollars|12,7 millions de dollars|127 millions de dollars|2
+RC|2|Combien de carats pèse le plus gros diamant facetté du monde ?|546

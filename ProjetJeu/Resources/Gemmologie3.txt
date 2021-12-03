@@ -1,0 +1,3 @@
+QCM|3|Quelle gemme peut arborer une palette de couleurs très différentes (bleue, jaune, orange, etc.) ?|La tanzanite|Le saphir|L’émeraude|2
+RC|3|À quoi renvoie le carat du diamant ?|Poids
+VF|3|Les principaux critères pour déterminer la qualité d’un diamant sont connus comme étant les 4C ?|true

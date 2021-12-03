@@ -1,0 +1,3 @@
+QCM|3|Les sédiments transportés par l’eau se déposent en fonction ?|de leur taille et du débit du courant|de leur forme|de leur épaisseur et du débit du courant|1
+RC|3|L’érosion et le transport des sédiments sont principalement assurés par ?|L'eau
+VF|3|La diagénèse correspond à la formation des roches sédimentaires|true

@@ -1,0 +1,4 @@
+RC|1|Quelle échelle permet de déterminer la dureté de base des minéraux ?|Rosiwal
+QCM|1|Le terme "habitus" signifie ?|Gisement|Forme des cristaux|Localisation géographique|2
+VF|1|Une roche est un assemblage d'au moins deux minéraux ?|false
+VF|1|Un minerai est une roche composite ?|false

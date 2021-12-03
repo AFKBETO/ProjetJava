@@ -1,11 +1,8 @@
 package V1;
 
-import java.security.InvalidParameterException;
-import java.util.ArrayList;
-
 public abstract class Question {
     private final String text;
-    private ListeThemes theme;
+    private Themes theme;
     private final int idQuestion;
     private final int difficulte;
     private static int count = 0;
@@ -18,18 +15,13 @@ public abstract class Question {
         }
         this.text=text;
         this.difficulte = difficulte;
-        this.idQuestion=count++;
+        this.idQuestion = count++;
         this.selectionee = false;
     }
     //Constructeur avec Theme
-    public Question(String text, ListeThemes theme, int difficulte){
+    public Question(String text, Themes theme, int difficulte){
         this(text,difficulte);
         this.theme=theme;
-    }
-    //Constructeur avec string Theme
-    public Question(String text, String theme, int difficulte){
-
-        this(text,ListeThemes.valueOf(theme) ,difficulte);
     }
 
     public int getID() {
@@ -44,12 +36,12 @@ public abstract class Question {
         this.selectionee = true;
     }
 
-    public abstract void saisieQuestion();
+    abstract String checkAnswer();
 
     //méthode toString de base
     @Override
     public String toString() {
-        return "Question no : " + this.idQuestion + "\nDifficulté : " + this.difficulte +
+        return "Question n" + this.idQuestion + " - Difficulté " + this.difficulte +
                 "\nEnoncé : " + this.text;
     }
 }

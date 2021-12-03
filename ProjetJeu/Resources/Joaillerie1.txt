@@ -1,0 +1,4 @@
+QCM|1|En quoi le carat des joalliers est-il différent du carat des bijoutiers ?|Le carat en joaillerie est une unité de pureté|Le carat en bijouterie est une unité de masse|Le carat en joaillerie est une unité de masse|3
+RC|1|Quel est le mot également employé pour parler de pierres en joaillerie ?|Gemme
+VF|1|Le sertissage est une technique en joaillerie qui consiste à fixer une pierre précieuse ou fine sur une monture métallique, en déplaçant une partie de ce métal ?|true
+VF|1|Un carat a un poids de 0,5 gramme ?|false

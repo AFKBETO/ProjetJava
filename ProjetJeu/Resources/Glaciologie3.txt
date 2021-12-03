@@ -1,0 +1,3 @@
+VF|3|La glaciologie est une discipline majeure dans la compréhension du système climatique ?|true
+VF|3|Les glaciologues se préoccupent de déterminer les principales caractéristiques des surfaces enneigées ?|false
+RC|3|Les glaces des inlandsis se comportant comme de véritables ?|archives

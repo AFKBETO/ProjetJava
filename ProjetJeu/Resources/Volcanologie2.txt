@@ -1,0 +1,3 @@
+VF|2|En France, il existe trois principales filières, pour obtenir une spécialisation en Volcanologie ?|true
+VF|2|Déformation, gravimétrie et magnétisme sont des domaines de la volcanologie actuelle ?|true
+QCM|2| Les roches volcaniques sont en général constituées ?|d'une texture à grains fins|d'une texture aphyrique à vitreuse|d'une texture à grains fins et aphyrique à vitreuse|3

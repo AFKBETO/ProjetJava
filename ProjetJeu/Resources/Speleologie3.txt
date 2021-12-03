@@ -1,0 +1,3 @@
+VF|3|La plongée spéléologique partage des traits communs à la plongée sous marine ?|false
+RC|3|Le tremblement de terre comporte surtout des oscillations qui sont un mouvement ?|Elastique
+RC|3|Les ondes séismiques sont très sensibles en profondeur ?|false

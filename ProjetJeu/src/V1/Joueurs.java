@@ -8,46 +8,41 @@ public class Joueurs {
     private final int totPlayers = 20;
     private final int nbrPlayers = 4;
     private final List<Joueur> joueurs = new ArrayList<>(totPlayers);
-    private final List<Joueur> j4 = new ArrayList<>(nbrPlayers);
+    private List<Joueur> j4 = new ArrayList<>(nbrPlayers);
 
     public Joueurs() {
         for(int i = 0; i < totPlayers; i++)
         {
-            joueurs.add(new Joueur("MV" + ((i + 10) * 10), "en attente", 0));
+            joueurs.add(new Joueur("Player" + ((i + 10) * 10), "en attente", 0, 0));
             joueurs.get(i).updateNum(i);
         }
     }
 
     public List<Joueur> selectJoueurs() {
-        j4.add(joueurs.get(new Random().nextInt(20)));
-        int curr = 1;
-        label: while (curr < nbrPlayers) {
-            int Rdcurr = new Random().nextInt(20);
-            for (int j = 0; j < curr; j++) {
-                if (joueurs.get(Rdcurr).getNum() == j4.get(j).getNum()){
-                    continue label;
-                }
-            }
+        for (int i = 0; i < 4; i++){
+            int Rdcurr = new Random().nextInt(joueurs.size());
             j4.add(joueurs.get(Rdcurr));
-            curr++;
+            joueurs.remove(Rdcurr);
         }
         return j4;
+    }
+
+    public void resJ4() {
+        j4 = new ArrayList<>(nbrPlayers);
+    }
+
+    public void newJ4(List<Joueur> j){ //recrée j4 avec 3 joueurs dans le grand jeu (phase 2 avec les 3 gagnants)
+        j4 = j;
     }
 
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
+        int i = j4.size();
         for (Joueur joueur : j4) {
+            StringBuilder tmp = i == 1 ? res.append(i).append("er  - ") : res.append(i).append("ème - ");
             res.append(joueur).append("\n");
-        }
-        return res.toString();
-    }
-
-    public String seeAllPlayers()
-    {
-        StringBuilder res = new StringBuilder();
-        for (Joueur joueur : joueurs) {
-            res.append(joueur).append("\n");
+            i--;
         }
         return res.toString();
     }

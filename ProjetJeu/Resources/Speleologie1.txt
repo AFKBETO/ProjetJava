@@ -1,0 +1,4 @@
+VF|1|Les techniques modernes de progression spéléologique dérivent de l'alpinisme ?|true
+RC|1|Quel est le pourcentage de spéléologues professionnels ?|1
+RC|1|Dans quel syndicat sont regroupés les spéléologues ?|SNPSC
+VF|1|La spléléologie est l'étude des cavernes rocheuses ?|false

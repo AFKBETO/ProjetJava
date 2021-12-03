@@ -1,0 +1,4 @@
+QCM|1|Considérée à tort comme la pierre de protection la plus puissante, laquelle est avant tout une pierre d'introspection ?|La malachite|L'obsidienne oeil céleste|L'onyx|2
+VF|1|La citrine et la turquoise sont les 2 pierres les plus souvent imitées ?|true
+RC|1|Pierre de sagesse, je peux favoriser les cauchemars et mauvais rêves la nuit. Je suis ?|Améthyste
+VF|1|Il existe des gemmes pour conjurer les mauvais esprit ?|true
