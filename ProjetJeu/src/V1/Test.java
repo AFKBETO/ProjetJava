@@ -103,7 +103,7 @@ public class Test{
         }
     }
 
-    static Joueur Game(Joueurs j, List<Joueur> j4) { //phase 1 du jeu
+    static Joueur Game(final Joueurs j, final List<Joueur> j4) { //phase 1 du jeu
         System.out.println("\n-------------------------Début de la Partie-------------------------\n");
 
         Phase1 t1 = new Phase1(); // début phase 1
@@ -116,7 +116,7 @@ public class Test{
         return gameSuite(j, j4); //suite du jeu avec les phases 2 et 3
     }
 
-    static Joueur gameSuite(Joueurs j, List<Joueur> j4){ //phase 2 et phase 3 du jeu
+    static Joueur gameSuite(final Joueurs j, final List<Joueur> j4){ //phase 2 et phase 3 du jeu
         Phase2 t2 = new Phase2(); // début phase 2
         t2.selectionJoueur(j4); // classement score, dernier -> perdant et les autres gagnants
         System.out.println("\nClassement actuel des Players :\n" + j);
@@ -136,7 +136,7 @@ public class Test{
         return j4.get(j4.size() - 1); //le dernier joueur de la liste est le gagnant, on le retourne pour le gj
     }
 
-    static int select(Joueurs currPlayers, Phase currThemes){
+    static int select(final Joueurs currPlayers, final Phase currThemes){
         String ans = "";
         while (!ans.equals("C")){
             System.out.println("\nPour voir les règles saisissez : R" + "\nPour voir les scores saissisez : S");
@@ -156,13 +156,13 @@ public class Test{
 
                 case "T":
                     System.out.println("Thème(s) déjà traité(s) :");
-                    for(int i = 0; i < currThemes.t.checkID().size(); i++) {
-                        System.out.println(currThemes.t.checkID().get(i)); //theme(s) de la liste retourné par checkID
+                    for(int i = 0; i < Themes.checkID().size(); i++) {
+                        System.out.println(Themes.checkID().get(i)); //theme(s) de la liste retourné par checkID
                     }
                     System.out.println("\nThème(s) pas encore traité(s) :");
                     for(int acc = 0; acc < 10; acc++){
                         Themes nTheme = Themes.values()[acc];
-                        if (!currThemes.t.checkID().contains(String.valueOf(nTheme))){
+                        if (!Themes.checkID().contains(String.valueOf(nTheme))){
                             System.out.println(nTheme); //theme pas dans la liste retourné par checkID
                         }
                     }

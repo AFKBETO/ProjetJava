@@ -8,13 +8,12 @@ public class Joueurs {
     private final int totPlayers = 20;
     private final int nbrPlayers = 4;
     private final List<Joueur> joueurs = new ArrayList<>(totPlayers);
-    private List<Joueur> j4 = new ArrayList<>(nbrPlayers);
+    private final List<Joueur> j4 = new ArrayList<>(nbrPlayers);
 
     public Joueurs() {
         for(int i = 0; i < totPlayers; i++)
         {
-            joueurs.add(new Joueur("Player" + ((i + 10) * 10), "en attente", 0, 0));
-            joueurs.get(i).updateNum(i);
+            joueurs.add(new Joueur("Player" + ((i + 10) * 10)));
         }
     }
 
@@ -28,11 +27,12 @@ public class Joueurs {
     }
 
     public void resJ4() {
-        j4 = new ArrayList<>(nbrPlayers);
+            j4.clear();
     }
 
-    public void newJ4(List<Joueur> j){ //recrée j4 avec 3 joueurs dans le grand jeu (phase 2 avec les 3 gagnants)
-        j4 = j;
+    public void newJ4(final List<Joueur> joueurs){ //recrée j4 avec 3 joueurs dans le grand jeu (phase 2 avec les 3 gagnants)
+        resJ4();
+        j4.addAll(joueurs);
     }
 
     @Override

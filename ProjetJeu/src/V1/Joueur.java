@@ -1,17 +1,20 @@
 package V1;
 
 public class Joueur{
-    private int ID = 100;
+    private static int COUNT = 0;
+    private final int id;
     private final String nom;
     private String etat;
     private int score;
     private int time;
 
-    public Joueur(String nom, String etat, int score, int time){
+    public Joueur(final String nom){
         this.nom = nom;
-        this.etat = etat;
-        this.score = score;
-        this.time = time;
+        this.etat = "en attente";
+        this.score = 0;
+        this.time = 0;
+        this.id = 100 + Joueur.COUNT * 10;
+        Joueur.COUNT++;
     }
 
     @Override
@@ -23,19 +26,15 @@ public class Joueur{
         while (twodigitS.length() < 2) twodigitS.insert(0, "0");
         StringBuilder threedigitMS = new StringBuilder("" + ms); //ajout de digit 0 si necessaire pour la lisibilité
         while (threedigitMS.length() < 3) threedigitMS.insert(0, "0");
-        return "ID:" + ID + " - Nom : " + nom + " - Score:" + score + " - Temps de réponse : " + mn + "mn" +
+        return "ID:" + id + " - Nom : " + nom + " - Score:" + score + " - Temps de réponse : " + mn + "mn" +
                 twodigitS + "s" + threedigitMS + "ms" + " - Etat : " + etat;
     }
 
-    public void updateNum(int ID){
-        this.ID += 10 * ID;
-    }
-
     public int getNum(){
-        return ID;
+        return id;
     }
 
-    public void majScore(int score){
+    public void majScore(final int score){
         this.score += score;
     }
 
@@ -43,7 +42,7 @@ public class Joueur{
         return score;
     }
 
-    public void updateEtat(String etat){
+    public void updateEtat(final String etat){
         this.etat = etat;
     }
 
@@ -51,7 +50,7 @@ public class Joueur{
         return etat;
     }
 
-    public void updateTime(int time){
+    public void updateTime(final int time){
         this.time += time;
     }
 

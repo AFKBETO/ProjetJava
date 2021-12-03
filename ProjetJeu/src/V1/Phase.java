@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Objects;
 
 public interface Phase {
-    Themes t = Themes.Archeologie;
-
     void selectionJoueur(List<Joueur> currJoueur); //update etat Players,
     void deroulerPhaseJeu(List<Joueur> currJoueur); //déroulement de la phase selon les règles, appel à currPhase
     void currPhase(String currTheme, List<Joueur> currJoueur, int i); //partie question et incrementation score/timer

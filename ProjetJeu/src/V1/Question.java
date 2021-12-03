@@ -9,7 +9,7 @@ public abstract class Question {
     private boolean selectionee;
 
     //Constructeur sans Theme - pour tester sans thème
-    public Question (String text, int difficulte) throws IllegalArgumentException {
+    public Question (final String text, final int difficulte) throws IllegalArgumentException {
         if(difficulte<1 || difficulte>3){
             throw new IllegalArgumentException("Niveau de difficulté doit être une valeur entre 1 et 3");
         }
@@ -19,7 +19,7 @@ public abstract class Question {
         this.selectionee = false;
     }
     //Constructeur avec Theme
-    public Question(String text, Themes theme, int difficulte){
+    public Question(final String text, final Themes theme, final int difficulte){
         this(text,difficulte);
         this.theme=theme;
     }

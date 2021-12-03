@@ -10,11 +10,11 @@ public class Questions {
     public Questions(){
     }
 
-    public void addQuestion(Question question){
+    public void addQuestion(final Question question){
         questions.add(question);
     } // Ajout de question
 
-    public void delQuestion(int i){
+    public void delQuestion(final int i){
         questions.remove(i);
     } //suppression de question
 

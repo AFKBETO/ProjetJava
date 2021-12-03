@@ -3,7 +3,7 @@ package V1;
 import java.util.*;
 
 public class Phase2 implements Phase {
-    public void selectionJoueur(List<Joueur> j3) {
+    public void selectionJoueur(final List<Joueur> j3) {
         if (j3.size() > 3) { //cas avec 4 joueurs -> le dernier joueur est perdant, pas qd le grand jeu d'ou size>3 (3j)
             j3.get(0).updateEtat("Perdant·e phase 1"); //le premier dans la liste est le perdant de la phase précedente
             System.out.println("\nPlayer" + j3.get(0).getNum() + " tombe à la Phase 1 !");
@@ -14,7 +14,7 @@ public class Phase2 implements Phase {
         }
     }
 
-    public void deroulerPhaseJeu(List<Joueur> j3){
+    public void deroulerPhaseJeu(final List<Joueur> j3){
         System.out.println("\n-----------------------Démarrage de la Phase 2-----------------------\n");
         List<String> tmp = new ArrayList<>();
         tmp = currThemes(tmp, j3);
@@ -39,8 +39,12 @@ public class Phase2 implements Phase {
             currPhase(tmp.get(ans), j3, i); //on passe aux questions si le thème est bien parmi ceux de la liste
             tmp.remove(ans); //on remove le thème pour qu'il ne soit plus appelable durant la phase 2
             i--; //update pour avoir ID du prochain joueur
-            if (i == 0) {
-                i = 2; //on reboucle quand le i < 0 car ID est associé au joueur des positions 1 à 3 dans la liste
+            if (j3.size() == 4 && i == 0) {
+                i = j3.size() - 1; //on reboucle quand le i < 0 car ID est associé au joueur des positions 1 à 3 dans la liste
+            }
+            else if(j3.size() == 3 && i == -1)
+            {
+                i = j3.size() - 1;
             }
         }
         j3.sort(Comparator.comparing(Joueur::getEtat).thenComparingInt(Joueur::getScore).thenComparing(Comparator.comparingInt(Joueur::getTime).reversed()));
@@ -48,7 +52,7 @@ public class Phase2 implements Phase {
         // dabord si le joueur est gagnant ou perdant puis selon les scores et enfin selon le timer
     }
 
-    public void currPhase(String aleaTheme, List<Joueur> j3, int i) {
+    public void currPhase(final String aleaTheme, final List<Joueur> j3, final int i) {
         Questions questionPlayer = new Questions(); //création liste de questions
         createQuestions(questionPlayer, aleaTheme + "2.txt"); //ajout des questions selon thème/difficulté choisis
         System.out.println("\nLe thème choisit par Player" + j3.get(i).getNum() + " est " + aleaTheme);
@@ -75,15 +79,15 @@ public class Phase2 implements Phase {
         }
     }
 
-    public List<String> currThemes(List<String> tmp, List<Joueur> j3){
+    public List<String> currThemes(final List<String> tmp, final List<Joueur> j3){
         while(tmp.size() < 6) //selection de 6 thèmes aléatoirement
         {
             int currRand = new Random().nextInt(10); //selection ID theme aleatoire
             String currTheme = String.valueOf(Themes.values()[currRand]); //theme associé à l'ID
-            if(!t.checkID().contains(currTheme)) //verification que le thème est pas déjà été choisit en phase2
+            if(!Themes.checkID().contains(currTheme)) //verification que le thème est pas déjà été choisit en phase2
             {
                 tmp.add(currTheme); //on ajoute à la liste des themes de la phase2 pour pas qu'il soit reselectionnable
-                t.choixUnTheme(currTheme); //on ajoute a la liste globale pour pas les reprendre en phase 3
+                Themes.choixUnTheme(currTheme); //on ajoute a la liste globale pour pas les reprendre en phase 3
             }
         }
         System.out.println("Player" + j3.get(j3.size() - 1).getNum() +" a fini premier·ère a la Phase 1, iel choisit donc dabord !");

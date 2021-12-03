@@ -3,7 +3,7 @@ package V1;
 import java.util.*;
 
 public class Phase3 implements Phase {
-    public void selectionJoueur(List<Joueur> j2) {
+    public void selectionJoueur(final List<Joueur> j2) {
         j2.get(j2.size() - 3).updateEtat("Perdant·e phase 2"); //le second dans la liste est le perdant de la phase, classement du 4ème au 1er
         System.out.println("\nPlayer" + j2.get(j2.size() - 3).getNum() + " tombe à la Phase 2 !");
         for (int i = j2.size() - 2; i < j2.size(); i++) { //les autres sont victorieux
@@ -12,19 +12,19 @@ public class Phase3 implements Phase {
         }
     }
 
-    public void deroulerPhaseJeu(List<Joueur> j2) {
+    public void deroulerPhaseJeu(final List<Joueur> j2) {
         List<String> tmp = new ArrayList<>(); //liste pour stocker les 3 thèmes traités en phase 3
         tmp = currThemes(tmp, j2); //récupération de 3 thèmes n'ayant pas encore été traité
         while (tmp.size() != 0) { //bouclage tant que les 3 themes n'ont pas été traité
             currPhase(tmp.get(0), j2, j2.size() - 1); //on lance les questions sur l'un des trois themes
             tmp.remove(0); //on supprime le thème une fois ce dernier joué
         }
-        t.resID(); //reset des themes utilisés pour ne pas etre bloqué dans le cas du grand jeu
+        Themes.resID(); //reset des themes utilisés pour ne pas etre bloqué dans le cas du grand jeu
         j2.sort(Comparator.comparing(Joueur::getEtat).thenComparingInt(Joueur::getScore).thenComparing(Comparator.comparingInt(Joueur::getTime).reversed()));
         j2.get(j2.size() - 2).updateEtat("Perdant·e phase 3"); //passage du joueur ayant perdu la phase 3 a perdant
     }
 
-    public void currPhase(String aleaTheme, List<Joueur> j2, int i){
+    public void currPhase(final String aleaTheme, final List<Joueur> j2, int i){
         Questions questionPlayer = new Questions(); //création liste de questions
         createQuestions(questionPlayer, aleaTheme + "3.txt"); //ajout des questions selon thème/difficulté choisis
         System.out.println("\nLe thème choisit aléatoirement est " + aleaTheme);
@@ -53,12 +53,12 @@ public class Phase3 implements Phase {
         }
     }
 
-    public List<String> currThemes(List<String> tmp, List<Joueur> j2){
+    public List<String> currThemes(final List<String> tmp, final List<Joueur> j2){
         for(int acc = 0; acc < 10; acc++){
             String currTheme = String.valueOf(Themes.values()[acc]); //récupération d'un thème séquentiellement
-            if (!t.checkID().contains(currTheme)){ //si le thème n'a pas encore été traité
+            if (!Themes.checkID().contains(currTheme)){ //si le thème n'a pas encore été traité
                 tmp.add(currTheme); //on l'ajoute à notre liste courante de la phase 3
-                t.choixUnTheme(currTheme); //a la liste globale des themes
+                Themes.choixUnTheme(currTheme); //a la liste globale des themes
             }
         }
         System.out.println("\n-----------------------Démarrage de la Phase 3-----------------------\n");

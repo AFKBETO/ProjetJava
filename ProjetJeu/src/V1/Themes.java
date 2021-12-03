@@ -15,17 +15,17 @@ public enum Themes {
 	Speleologie,
 	Volcanologie;
 
-	private List<String> ids = new ArrayList<>();
+	private static final List<String> ids = new ArrayList<>();
 
-	public List<String> checkID(){
+	public static List<String> checkID(){
 		return ids;
 	}
 
-	public void resID(){
-		ids = new ArrayList<>();
+	public static void resID(){
+		ids.clear();
 	}
 
-	public void choixUnTheme(String theme){
+	public static void choixUnTheme(final String theme){
 		ids.add(theme); // assignation de l'id du theme correspondant au thème saisit
 	}
 }
