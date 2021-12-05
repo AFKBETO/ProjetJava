@@ -8,7 +8,7 @@ import java.util.*;
 public class Test{
     public static void main(String[] args){
         String ans = "";
-        while (!ans.equals("Q")){
+        gameProcess: while (true){
             Joueurs j = new Joueurs(); //création 20 joueurs
             List<Joueur> j4 = j.selectJoueurs(); //sélection 4 joueurs
             System.out.println("\nPour voir les règles saisissez : R" + "\nPour lançer une partie saisissez : J" +
@@ -18,10 +18,12 @@ public class Test{
             System.out.println();
             switch (ans){
                 case "R":
+                case "r":
                     Rules();
                     break;
 
                 case "J":
+                case "j":
                     System.out.println("\n--------------------------------------------Démarrage de la Partie-----" +
                             "---------------------------------------\n");
                     Joueur winner = Game(j, j4);
@@ -34,6 +36,7 @@ public class Test{
                     break;
 
                 case "GJ" :
+                case "gj":
                     List<Joueur> winners = new ArrayList<>();
                     int i = 0;
                     boolean check = true;
@@ -79,8 +82,9 @@ public class Test{
                     break;
 
                 case "Q" :
+                case "q":
                     System.out.println("Merci d'avoir joué à notre jeu, au plaisir de vous revoir !");
-                    break;
+                    break gameProcess;
 
                 default:
                     System.out.println("Merci de sélectionner : R - J - GJ - Q !");
@@ -138,7 +142,7 @@ public class Test{
 
     static int select(final Joueurs currPlayers, final Phase currThemes){
         String ans = "";
-        while (!ans.equals("C")){
+        selectProcess: while (true){
             System.out.println("\nPour voir les règles saisissez : R" + "\nPour voir les scores saissisez : S");
             System.out.println("Pour voir les thèmes saissisez : T" + "\nPour continuer de jouer saisissez : C");
             System.out.println("Pour arrêter la partie en cours saisissez : Q");
@@ -147,14 +151,17 @@ public class Test{
             System.out.println();
             switch (ans){
                 case "R":
+                case "r":
                     Rules();
                     break;
 
                 case "S":
+                case "s":
                     System.out.println("\nClassement actuel des Players :\n" + currPlayers);
                     break;
 
                 case "T":
+                case "t":
                     System.out.println("Thème(s) déjà traité(s) :");
                     for(int i = 0; i < Themes.checkID().size(); i++) {
                         System.out.println(Themes.checkID().get(i)); //theme(s) de la liste retourné par checkID
@@ -169,9 +176,11 @@ public class Test{
                     break;
 
                 case "C":
-                    break;
+                case "c":
+                    break selectProcess;
 
                 case "Q":
+                case "q":
                     System.out.println("Merci d'avoir joué cette partie, en espérant vous voir tenter de nouveau !");
                     return -1;
 
