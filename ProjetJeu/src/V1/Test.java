@@ -7,14 +7,13 @@ import java.util.*;
 
 public class Test{
     public static void main(String[] args){
-        String ans = "";
         gameProcess: while (true){
             Joueurs j = new Joueurs(); //création 20 joueurs
             List<Joueur> j4 = j.selectJoueurs(); //sélection 4 joueurs
             System.out.println("\nPour voir les règles saisissez : R" + "\nPour lançer une partie saisissez : J" +
                     "\nPour lançer le grand jeu saisissez : GJ" + "\nPour quitter le jeu saisissez : Q");
             Scanner sc = new Scanner(System.in);
-            ans = sc.nextLine();
+            String ans = sc.nextLine();
             System.out.println();
             switch (ans){
                 case "R":
@@ -141,13 +140,12 @@ public class Test{
     }
 
     static int select(final Joueurs currPlayers, final Phase currThemes){
-        String ans = "";
         selectProcess: while (true){
             System.out.println("\nPour voir les règles saisissez : R" + "\nPour voir les scores saissisez : S");
             System.out.println("Pour voir les thèmes saissisez : T" + "\nPour continuer de jouer saisissez : C");
             System.out.println("Pour arrêter la partie en cours saisissez : Q");
             Scanner sc = new Scanner(System.in);
-            ans = sc.nextLine();
+            String ans = sc.nextLine();
             System.out.println();
             switch (ans){
                 case "R":
