@@ -15,14 +15,12 @@ public class Test{
             Scanner sc = new Scanner(System.in);
             String ans = sc.nextLine();
             System.out.println();
-            switch (ans){
+            switch (ans.toUpperCase()){
                 case "R":
-                case "r":
                     Rules();
                     break;
 
                 case "J":
-                case "j":
                     System.out.println("\n--------------------------------------------Démarrage de la Partie-----" +
                             "---------------------------------------\n");
                     Joueur winner = Game(j, j4);
@@ -35,7 +33,6 @@ public class Test{
                     break;
 
                 case "GJ" :
-                case "gj":
                     List<Joueur> winners = new ArrayList<>();
                     int i = 0;
                     boolean check = true;
@@ -81,7 +78,6 @@ public class Test{
                     break;
 
                 case "Q" :
-                case "q":
                     System.out.println("Merci d'avoir joué à notre jeu, au plaisir de vous revoir !");
                     break gameProcess;
 
@@ -147,19 +143,16 @@ public class Test{
             Scanner sc = new Scanner(System.in);
             String ans = sc.nextLine();
             System.out.println();
-            switch (ans){
+            switch (ans.toUpperCase()){
                 case "R":
-                case "r":
                     Rules();
                     break;
 
                 case "S":
-                case "s":
                     System.out.println("\nClassement actuel des Players :\n" + currPlayers);
                     break;
 
                 case "T":
-                case "t":
                     System.out.println("Thème(s) déjà traité(s) :");
                     for(int i = 0; i < Themes.checkID().size(); i++) {
                         System.out.println(Themes.checkID().get(i)); //theme(s) de la liste retourné par checkID
@@ -174,11 +167,9 @@ public class Test{
                     break;
 
                 case "C":
-                case "c":
                     break selectProcess;
 
                 case "Q":
-                case "q":
                     System.out.println("Merci d'avoir joué cette partie, en espérant vous voir tenter de nouveau !");
                     return -1;
 

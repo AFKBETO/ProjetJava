@@ -14,7 +14,7 @@ public interface Phase {
     {                                                             //selection selon le thème et la difficulté dans name
         try
         {
-            String filename = "Resources\\" + name;
+            String filename = "Resources/" + name;
             BufferedReader file = new BufferedReader(new FileReader(filename));
             String str;
             String[] newStr;
