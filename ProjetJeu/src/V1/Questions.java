@@ -7,16 +7,9 @@ import java.util.Random;
 public class Questions {
     private final List<Question> questions = new ArrayList<>();
 
-    public Questions(){
-    }
-
     public void addQuestion(final Question question){
         questions.add(question);
     } // Ajout de question
-
-    public void delQuestion(final int i){
-        questions.remove(i);
-    } //suppression de question
 
     public Question getUneQuestion(){ //renvoie une question
         int nb = new Random().nextInt(questions.size());

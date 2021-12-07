@@ -23,9 +23,9 @@ public enum Themes {
 
 	public static void resID(){
 		ids.clear();
-	}
+	} //reset la liste des themes joués
 
 	public static void choixUnTheme(final String theme){
-		ids.add(theme); // assignation de l'id du theme correspondant au thème saisit
+		ids.add(theme);
 	}
 }

@@ -1,26 +1,24 @@
 package V1;
 
 public class Joueur{
-    private static int COUNT = 0;
     private final int id;
     private final String nom;
     private String etat;
     private int score;
     private int time;
 
-    public Joueur(final String nom){
+    public Joueur(String nom, int i){
         this.nom = nom;
         this.etat = "en attente";
         this.score = 0;
         this.time = 0;
-        this.id = 100 + Joueur.COUNT * 10;
-        Joueur.COUNT++;
+        this.id = 100 + i * 10;
     }
 
     @Override
     public String toString(){
-        int mn = time/60000;
-        int sec = time/1000 - mn * 60;
+        int mn = time / 60000;
+        int sec = time / 1000 - mn * 60;
         int ms = time - mn * 60000 - sec * 1000;
         StringBuilder twodigitS = new StringBuilder("" + sec); //ajout de digit 0 si necessaire pour la lisibilité
         while (twodigitS.length() < 2) twodigitS.insert(0, "0");
