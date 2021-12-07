@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class Test{
+public class Main {
     public static void main(String[] args){
         gameProcess: while (true){
             Joueurs j = new Joueurs(); //création 20 joueurs
@@ -36,7 +36,7 @@ public class Test{
                     List<Joueur> winners = new ArrayList<>();
                     int i = 0;
                     boolean check = true;
-                    while(i < 3 && check) { //on lance 3 gales succesives
+                    while(i < 3 && check) { //on lance 3 games succesives
                         Joueur gjWinner = Game(j, j4); //recuperation du gagnant
                         winners.add(gjWinner); //ajout a la liste des gagnants pour le grand jeu
                         if (gjWinner != null) {
@@ -46,27 +46,26 @@ public class Test{
                                     "--------------------------------------\n");
                         }
                         else{ // gjWinner = null donc le joueur a demander a quitter
-                            check = false; // comme on quitte on utilise ce boolean pour ne pas proceder a la suite du jeu
+                            check = false; //comme on quitte on utilise ce boolean pour ne pas proceder a la suite du jeu
                         }
                         i++;
                         if (i != 3) { //tant qu'on a pas nos 3 gagnants
-                            j.resJ4(); // on res la val j4 de joueurs car 4 nv joueurs
+                            j.resJ4(); //on res la val j4 de joueurs car 4 nv joueurs
                             j4 = j.selectJoueurs(); //sélection 4nv joueurs
                         }
-                        else { // quand on arrive a la fin on ajoute les 3 gagnants à j4
-                            //j.resJ4(); // on res la val prec de j4
-                            j.newJ4(winners); //on ajoute les gagnants à j4
+                        else { // ajout des 3 gagnants à j4 en fct de leur points puis de leur temps si égalité
                             winners.sort(Comparator.comparingInt(Joueur::getScore).thenComparing(Comparator.comparingInt(Joueur::getTime).reversed()));
-                        }   //on trie les winners en fonction de leur points puis de leur temps si égalité
+                            j.newJ4(winners); //on ajoute les gagnants à j4
+                        }
                     }
                     if (check) {
                         System.out.println("\n-------------------------Début du Grand Jeu-------------------------\n");
                         System.out.println("Bravo aux gagnants des trois précedentes parties :");
-                        Joueur gjWinner = gameSuite(j, winners); //on relance a la phase 2 pour les 3 gagnants
+                        Joueur gjWinner = gameSuite(j, j.getJ4()); //on relance a la phase 2 pour les 3 gagnants
                         if (gjWinner != null) { //si !=null alors on a un(e) super vaincqueur·se
                             gjWinner.updateEtat("Super Vaincqueur·e");
                             System.out.println("\nClassement actuel des Players :\n" + j);
-                            System.out.println("\n✨✨✨ Bravo au ✧Player" + gjWinner.getNum() + "✧ qui remporte le grand Jeu ✨✨✨\n");
+                            System.out.println("\n✨✨✨ Bravo au ✧Player" + gjWinner.getNum() + "✧ qui remporte le Grand Jeu ✨✨✨\n");
                         }
                         System.out.println("\n--------------------------------------------Arrêt du Grand Jeu----------" +
                                 "--------------------------------------\n");
@@ -170,6 +169,7 @@ public class Test{
                     break selectProcess;
 
                 case "Q":
+                    Themes.resID(); //reset liste themes car arret abrupt, ce cas est normalement geré en fin de phase 3
                     System.out.println("Merci d'avoir joué cette partie, en espérant vous voir tenter de nouveau !");
                     return -1;
 
