@@ -13,8 +13,12 @@ public class Joueurs {
     public Joueurs() {
         for(int i = 0; i < totPlayers; i++)
         {
-            joueurs.add(new Joueur("Player" + ((i + 10) * 10)));
+            joueurs.add(new Joueur("Player" + ((i + 10) * 10), i));
         }
+    }
+
+    public List<Joueur> getJ4(){
+        return j4;
     }
 
     public List<Joueur> selectJoueurs() {
@@ -23,17 +27,17 @@ public class Joueurs {
             j4.add(joueurs.get(Rdcurr));
             joueurs.remove(Rdcurr);
         }
-        return j4;
+        return getJ4();
     }
 
     public void resJ4() {
             j4.clear();
-    }
+    } //on clear les 4 joueurs courant à la fin d'une partie, dans le cas du grand jeu où les sont parties successives
 
-    public void newJ4(final List<Joueur> joueurs){ //recrée j4 avec 3 joueurs dans le grand jeu (phase 2 avec les 3 gagnants)
+    public void newJ4(final List<Joueur> joueurs){
         resJ4();
         j4.addAll(joueurs);
-    }
+    } //recrée j4 avec 3 joueurs dans le grand jeu (phase 2 avec les 3 gagnants)
 
     @Override
     public String toString() {
