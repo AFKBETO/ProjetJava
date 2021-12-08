@@ -66,7 +66,7 @@ public class Phase2 implements Phase {
             boolean check = false; //booléan pour savoir si le joueur a bien répondu
             if (sc.nextLine().equals(currQuest.checkAnswer())) //vérifie si le joueur a bien répondu
             {
-                j3.get(i).majScore(3); //incrémentation du score
+                j3.get(i).addScore(3); //incrémentation du score
                 check = true; //permet d'afficher un message cohérent selon bonne ou mauvaise réponse du joueur
             }
             j3.get(i).updateTime((int) (System.currentTimeMillis() - startTime)); //temps de réponse

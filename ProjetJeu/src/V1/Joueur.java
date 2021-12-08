@@ -32,7 +32,7 @@ public class Joueur{
         return id;
     }
 
-    public void majScore(final int score){
+    public void addScore(final int score){
         this.score += score;
     }
 
