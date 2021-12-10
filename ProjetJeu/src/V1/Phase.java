@@ -10,8 +10,15 @@ public interface Phase {
     void currPhase(String currTheme, List<Joueur> currJoueur, int i); //partie question et incrementation score/timer
     List<String> currThemes(List<String> tmp, List<Joueur> j2); //donne les thèmes nécessaire à la phase
 
-    default void createQuestions(Questions question, String name) //crée les questions et les ajoute a l'obj question
-    {                                                             //selection selon le thème et la difficulté dans name
+    /**
+     * Cette méthode de l'interface phase permet de récupérer toutes les questions sur un sujet
+     * à partir d'un nom de thème.
+     * Les questions sont créées et stockées dans des fichiers classsés par nom de thème et difficultés.
+     * @param question : cette objet Question va récupérer l'ensemble des questions lues du fichier.
+     * @param name : nom du thème, peut prendre les valeur nom_theme1.txt, nom_theme2.txt, nom_theme3.txt (1, 2 et 3 correspondant au niveau de difficulté des questions).
+     * */
+    default void createQuestions(Questions question, String name) 
+    {
         try
         {
             String filename = "Resources/" + name;

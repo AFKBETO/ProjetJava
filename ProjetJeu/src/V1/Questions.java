@@ -7,11 +7,19 @@ import java.util.Random;
 public class Questions {
     private final List<Question> questions = new ArrayList<>();
 
+    /**
+     * Cette fonction permet d'ajouter des Question à notre objet Questions
+     * */
     public void addQuestion(final Question question){
         questions.add(question);
-    } // Ajout de question
+    }
 
-    public Question getUneQuestion(){ //renvoie une question
+    /**
+     * Cette fonction permet de renvoyer une Question contenue dans notre objet Questions.
+     * La sélection de la question se fait de manière aléatoire.
+     * Avant de renvoyer la question, on vérifie que la question n'a pas été précédemment posée à un joueur.
+     * */
+    public Question getUneQuestion(){
         int nb = new Random().nextInt(questions.size());
         while(questions.get(nb).estPosee()) {
             nb = new Random().nextInt(questions.size());
