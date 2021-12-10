@@ -16,7 +16,7 @@ public class TestQuestions {
         questions.addQuestion(q2);
         questions.addQuestion(q3);
 
-        System.out.println(questions.toString());
+        System.out.println(questions);
         //résultat attendu : appel au toString de chaque question contenue dans questions
         /*
         * Question n0 - Difficulté 1

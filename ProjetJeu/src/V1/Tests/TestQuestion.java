@@ -19,7 +19,7 @@ public class TestQuestion {
         System.out.println((q2.estPosee())); //résultat attendu : false
 
         //Test sur la classe RC.java
-        System.out.println(q1.toString());
+        System.out.println(q1);
         /* résultat attendu :
         * Question n0 - Difficulté 1
         * Enoncé : Quelle est la capitale de la France
@@ -28,7 +28,7 @@ public class TestQuestion {
         System.out.println(q1.checkAnswer()); // résultat attendu : Paris
 
         //Tests sur la classe VF.java
-        System.out.println(q2.toString());
+        System.out.println(q2);
         /* résultat attendu :
          * Question n1 - Difficulté 2
          * Enoncé : La capital de le France est Paris
@@ -38,7 +38,7 @@ public class TestQuestion {
         System.out.println(q2.checkAnswer()); // résultat attendu : true
 
         //Tests sur la classe QCM.java
-        System.out.println(q3.toString());
+        System.out.println(q3);
         /* résultat attendu :
          * Question n2 - Difficulté 1
          * Enoncé : Quelle est la capitale de la France ?
