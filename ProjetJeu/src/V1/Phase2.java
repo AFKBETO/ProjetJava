@@ -58,6 +58,7 @@ public class Phase2 implements Phase {
         System.out.println("\nLe thème choisit par Player" + j3.get(i).getNum() + " est " + aleaTheme);
         System.out.println("Vous devrez répondre à deux questions de niveau moyen sur ce thème\n");
 
+        //chaque joueur répond à deux questions
         for(int acc = 1; acc < 3; acc++) {
             Question currQuest = questionPlayer.getUneQuestion(); //choisit une question alea pour un joueur
             System.out.println("\nLa "+(acc == 1 ? "première question est la " : "seconde question est la ")+currQuest);

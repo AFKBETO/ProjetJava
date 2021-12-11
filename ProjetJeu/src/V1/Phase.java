@@ -5,8 +5,25 @@ import java.util.List;
 import java.util.Objects;
 
 public interface Phase {
-    void selectionJoueur(List<Joueur> currJoueur); //update etat Players,
-    void deroulerPhaseJeu(List<Joueur> currJoueur); //déroulement de la phase selon les règles, appel à currPhase
+    /**
+     * Cette méthode d'interface Phase permet de mettre à jour l'état des joueurs
+     * @param currJoueur les joueurs en jeu dans cette phase
+     */
+    void selectionJoueur(List<Joueur> currJoueur);
+
+    /**
+     * Cette méthode d'interface Phase permet de démarrer la phase de jeu actuelle
+     * Chaque phase se déroule différemment selon les règles, ensuite fait l'appel à currPhase
+     * @param currJoueur les joueurs en jeu dans cette phase
+     */
+    void deroulerPhaseJeu(List<Joueur> currJoueur);
+
+    /**
+     * Cette méthode d'interface Phase permet de lancer la partie question et l'incrémentation score/timer
+     * @param currTheme : le theme selectionné pour la partie question
+     * @param currJoueur : liste des joueurs dans cette phase
+     * @param i : indice de joueur
+     */
     void currPhase(String currTheme, List<Joueur> currJoueur, int i); //partie question et incrementation score/timer
     List<String> currThemes(List<String> tmp, List<Joueur> j2); //donne les thèmes nécessaire à la phase
 
