@@ -19,7 +19,8 @@ public enum Themes {
 
 	/**
 	 * Cette méthode statique de l'enum Themes permet de récupérer toutes les thèmes déjà choisis
-	 * */
+	 * Cette information est utilisée pour éviter choisir le même thème
+	 */
 	public static List<String> checkID(){
 		return Themes.themes;
 	}
