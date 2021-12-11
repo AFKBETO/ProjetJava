@@ -12,7 +12,7 @@ public class Joueur{
      * Constructeur de la classe Joueur
      * @param nom : nom du joueur
      */
-    public Joueur(String nom){
+    public Joueur(final String nom){
         this.nom = nom;
         this.etat = "en attente";
         this.score = 0;

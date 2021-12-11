@@ -14,7 +14,7 @@ public class Joueurs {
      * Constructeur de la classe Joueurs
      * @param names : liste de nom des 20 joueurs
      */
-    public Joueurs(String[] names) {
+    public Joueurs(final String[] names) {
         Joueur.resetCount();
         if (names.length == TOTPLAYERS) {
             for(String name : names) {
