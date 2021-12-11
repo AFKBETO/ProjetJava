@@ -4,7 +4,7 @@ public abstract class Question {
     private final String text;
     private final int idQuestion;
     private final int difficulte;
-    private static int count = 0;
+    private static int COUNT = 0;
     private boolean selectionee;
 
     /**
@@ -18,7 +18,7 @@ public abstract class Question {
         }
         this.text=text;
         this.difficulte = difficulte;
-        this.idQuestion = count++;
+        this.idQuestion = Question.COUNT++;
         this.selectionee = false;
     }
 
