@@ -9,6 +9,9 @@ import java.util.List;
 public class TestJoueurs {
     public static void main(String[] args) {
         Joueurs joueurs = new Joueurs();
+        System.out.println(joueurs);
+        joueurs = new Joueurs();
+        System.out.println(joueurs);
         List<Joueur> j4 = new ArrayList<Joueur>();
         for(Joueur joueur:joueurs.selectJoueurs()){
             j4.add(joueur);
