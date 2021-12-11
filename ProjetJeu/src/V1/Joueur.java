@@ -1,18 +1,27 @@
 package V1;
 
 public class Joueur{
+    private static int COUNT = 100;
     private final int id;
     private final String nom;
     private String etat;
     private int score;
     private int time;
 
-    public Joueur(String nom, int i){
+    public Joueur(String nom){
         this.nom = nom;
         this.etat = "en attente";
         this.score = 0;
         this.time = 0;
-        this.id = 100 + i * 10;
+        this.id = Joueur.COUNT;
+        Joueur.COUNT += 10;
+    }
+    public Joueur(){
+        this("Player"+ Joueur.COUNT);
+    }
+
+    public static void resetCount(){
+        Joueur.COUNT = 0;
     }
 
     @Override

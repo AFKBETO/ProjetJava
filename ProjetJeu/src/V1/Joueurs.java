@@ -5,15 +5,28 @@ import java.util.List;
 import java.util.Random;
 
 public class Joueurs {
-    private final int totPlayers = 20;
-    private final int nbrPlayers = 4;
-    private final List<Joueur> joueurs = new ArrayList<>(totPlayers);
-    private final List<Joueur> j4 = new ArrayList<>(nbrPlayers);
+    private final static int TOTPLAYERS = 20;
+    private final static int NBRPLAYERS = 4;
+    private final List<Joueur> joueurs = new ArrayList<>(TOTPLAYERS);
+    private final List<Joueur> j4 = new ArrayList<>(NBRPLAYERS);
+
+    public Joueurs(String[] names) {
+        Joueur.resetCount();
+        if (names.length == TOTPLAYERS) {
+            for(String name : names) {
+                joueurs.add(new Joueur(name));
+            }
+        }
+        else {
+            throw new IllegalArgumentException("Il faut ajouter exactement 20 joueurs!!");
+        }
+    }
 
     public Joueurs() {
-        for(int i = 0; i < totPlayers; i++)
+        Joueur.resetCount();
+        for(int i = 0; i < 20; i++)
         {
-            joueurs.add(new Joueur("Player" + ((i + 10) * 10), i));
+            joueurs.add(new Joueur());
         }
     }
 

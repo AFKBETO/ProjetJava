@@ -4,7 +4,7 @@ import V1.Joueur;
 
 public class TestJoueur {
     public static void main(String[] args) {
-        Joueur player = new Joueur("Manuel Macron",1);
+        Joueur player = new Joueur("Manuel Macron");
         System.out.println("Initialize :\n" + player);
         System.out.println("ID : " + player.getNum());
         player.addScore(10);
