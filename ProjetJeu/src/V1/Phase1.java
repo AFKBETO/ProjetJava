@@ -17,7 +17,7 @@ public class Phase1 implements Phase {
         currPhase(tmp.get(0), j4, 0); //on lance la 1ere phase avec le premier theme
     }
 
-    public void currPhase(final String aleaTheme, final List<Joueur> j4, int i){
+    public void currPhase(final String aleaTheme, final List<Joueur> j4, final int i){
         Questions questionPlayer = new Questions(); //création liste de questions
         createQuestions(questionPlayer, aleaTheme + "1.txt"); //ajout des questions selon thème/difficulté choisis
         System.out.println("Le thème choisit aléatoirement est " + aleaTheme);
