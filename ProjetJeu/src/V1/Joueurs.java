@@ -10,6 +10,10 @@ public class Joueurs {
     private final List<Joueur> joueurs = new ArrayList<>(TOTPLAYERS);
     private final List<Joueur> j4 = new ArrayList<>(NBRPLAYERS);
 
+    /**
+     * Constructeur de la classe Joueurs
+     * @param names : liste de nom des 20 joueurs
+     */
     public Joueurs(String[] names) {
         Joueur.resetCount();
         if (names.length == TOTPLAYERS) {
@@ -22,6 +26,9 @@ public class Joueurs {
         }
     }
 
+    /**
+     * Constructeur par défaut de la classe Joueurs
+     */
     public Joueurs() {
         Joueur.resetCount();
         for(int i = 0; i < 20; i++)
@@ -30,10 +37,17 @@ public class Joueurs {
         }
     }
 
+    /**
+     * Cette méthode de la classe Joueurs permet de récupérer la liste des joueurs dans le jeu
+     */
     public List<Joueur> getJ4(){
         return j4;
     }
 
+    /**
+     * Cette méthode de la classe Joueurs permet de choisir 4 joueurs aléatoires
+     * Elle permet également de récupérer cette liste
+     */
     public List<Joueur> selectJoueurs() {
         for (int i = 0; i < 4; i++){
             int Rdcurr = new Random().nextInt(joueurs.size());
@@ -43,14 +57,23 @@ public class Joueurs {
         return getJ4();
     }
 
+    /**
+     * Cette méthode de la classe Joueurs permet de vider la liste des joueurs
+     * Dans le cas du grand jeu où les sont parties successives, cette méthode est utilisé à la fin de chaque partie
+     */
     public void resJ4() {
-            j4.clear();
-    } //on clear les 4 joueurs courant à la fin d'une partie, dans le cas du grand jeu où les sont parties successives
+        j4.clear();
+    }
 
+    /**
+     * Cette méthode de la classe Joueurs permet de créer une liste de participants
+     * Dans la partie finale du grand jeu, on crée une liste avec les 3 gagnants
+     * @param joueurs
+     */
     public void newJ4(final List<Joueur> joueurs){
         resJ4();
         j4.addAll(joueurs);
-    } //recrée j4 avec 3 joueurs dans le grand jeu (phase 2 avec les 3 gagnants)
+    }
 
     @Override
     public String toString() {
