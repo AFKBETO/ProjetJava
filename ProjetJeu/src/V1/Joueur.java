@@ -17,11 +17,11 @@ public class Joueur{
         Joueur.COUNT += 10;
     }
     public Joueur(){
-        this("Player"+ Joueur.COUNT);
+        this("Player" + Joueur.COUNT);
     }
 
     public static void resetCount(){
-        Joueur.COUNT = 0;
+        Joueur.COUNT = 100;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Joueur{
     }
 
     public int getNum(){
-        return id;
+        return this.id;
     }
 
     public void addScore(final int score){
@@ -54,7 +54,7 @@ public class Joueur{
     }
 
     public String getEtat(){
-        return etat;
+        return this.etat;
     }
 
     public void updateTime(final int time){
@@ -63,5 +63,7 @@ public class Joueur{
 
     public int getTime(){
         return time;
+    public int getTime() {
+        return this.time;
     }
 }
