@@ -56,10 +56,17 @@ public class Joueurs {
     public String toString() {
         StringBuilder res = new StringBuilder();
         int i = j4.size();
-        for (Joueur joueur : j4) {
-            StringBuilder tmp = i == 1 ? res.append(i).append("er  - ") : res.append(i).append("ème - ");
-            res.append(joueur).append("\n");
-            i--;
+        if (i > 0){
+            for (Joueur joueur : j4) {
+                StringBuilder tmp = i == 1 ? res.append(i).append("er  - ") : res.append(i).append("ème - ");
+                res.append(joueur).append("\n");
+                i--;
+            }
+        }
+        else{
+            for (Joueur joueur: joueurs) {
+                res.append(joueur).append("\n");
+            }
         }
         return res.toString();
     }
