@@ -32,7 +32,7 @@ public class Phase2 implements Phase {
                 System.out.println("Merci de choisir un chiffre !");
                 continue;
             }
-            if ((ans < 0 || ans > tmp.size())) { //on vérifie que l'utilisateur choississe bien un thème dispo
+            if ((ans < 0 || ans >= tmp.size())) { //on vérifie que l'utilisateur choississe bien un thème dispo
                 System.out.println("Merci de choisir un chiffre valide !");
                 continue;
             }
