@@ -20,7 +20,7 @@ public class Phase1 implements Phase {
     public void currPhase(final String aleaTheme, final List<Joueur> j4, final int i){
         Questions questionPlayer = new Questions(); //création liste de questions
         createQuestions(questionPlayer, aleaTheme + "1.txt"); //ajout des questions selon thème/difficulté choisis
-        System.out.println("Le thème choisit aléatoirement est " + aleaTheme);
+        System.out.println("Le thème choisi aléatoirement est " + aleaTheme);
         System.out.println("A tour de rôle vous devrez répondre à une question de niveau facile");
 
         for (final Joueur joueur : j4) { //on itère sur les 4 joueurs

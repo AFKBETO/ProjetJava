@@ -55,7 +55,7 @@ public class Phase2 implements Phase {
     public void currPhase(final String aleaTheme, final List<Joueur> j3, final int i) {
         Questions questionPlayer = new Questions(); //création liste de questions
         createQuestions(questionPlayer, aleaTheme + "2.txt"); //ajout des questions selon thème/difficulté choisis
-        System.out.println("\nLe thème choisit par Player" + j3.get(i).getNum() + " est " + aleaTheme);
+        System.out.println("\nLe thème choisi par Player" + j3.get(i).getNum() + " est " + aleaTheme);
         System.out.println("Vous devrez répondre à deux questions de niveau moyen sur ce thème\n");
 
         //chaque joueur répond à deux questions

@@ -11,7 +11,7 @@ public enum Themes {
 	Joaillerie,
 	Lithotherapie,
 	Mineralogie,
-	Sedimantologie,
+	Sedimentologie,
 	Speleologie,
 	Volcanologie;
 

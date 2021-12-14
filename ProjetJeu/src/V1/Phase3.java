@@ -27,7 +27,7 @@ public class Phase3 implements Phase {
     public void currPhase(final String aleaTheme, final List<Joueur> j2, int i){
         Questions questionPlayer = new Questions(); //création liste de questions
         createQuestions(questionPlayer, aleaTheme + "3.txt"); //ajout des questions selon thème/difficulté choisis
-        System.out.println("\nLe thème choisit aléatoirement est " + aleaTheme);
+        System.out.println("\nLe thème choisi aléatoirement est " + aleaTheme);
         System.out.println("A tour de rôle vous devrez répondre à une question de niveau difficile");
 
         for(int acc = 1; acc < 3; acc++) {
