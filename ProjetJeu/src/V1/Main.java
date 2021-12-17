@@ -63,7 +63,7 @@ public class Main {
                         System.out.println("Bravo aux gagnants des trois précedentes parties :");
                         Joueur gjWinner = gameSuite(j, j.getJ4()); //on relance a la phase 2 pour les 3 gagnants
                         if (gjWinner != null) { //si !=null alors on a un(e) super vaincqueur·se
-                            gjWinner.updateEtat("Super Vaincqueur·e");
+                            gjWinner.updateEtat(Joueur.SUPVAINCQUEUR);
                             System.out.println("\nClassement actuel des Players :\n" + j);
                             System.out.println("\n✨✨✨ Bravo au ✧Player" + gjWinner.getNum() + "✧ qui remporte le Grand Jeu ✨✨✨\n");
                         }

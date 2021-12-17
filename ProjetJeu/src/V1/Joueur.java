@@ -8,13 +8,21 @@ public class Joueur{
     private int score;
     private int time;
 
+    public final static String ATTENTE = "en attente";
+    public final static String SELECTIONE = "sélectionné·e";
+    public final static String PERDU_P1 = "Perdant·e phase 1";
+    public final static String PERDU_P2 = "Perdant·e phase 2";
+    public final static String PERDU_P3 = "Perdant·e phase 3";
+    public final static String VAINCQUEUR = "Vaincqueur·e";
+    public final static String SUPVAINCQUEUR = "Super Vaincqueur·e";
+
     /**
      * Constructeur de la classe Joueur
      * @param nom : nom du joueur
      */
     public Joueur(final String nom){
         this.nom = nom;
-        this.etat = "en attente";
+        this.etat = Joueur.ATTENTE;
         this.score = 0;
         this.time = 0;
         this.id = Joueur.COUNT;
@@ -80,7 +88,13 @@ public class Joueur{
      * @param etat : l'etat de joueur
      */
     public void updateEtat(final String etat){
-        this.etat = etat;
+        if(etat.equals(Joueur.SELECTIONE) || etat.equals(Joueur.PERDU_P1) || etat.equals(Joueur.PERDU_P2)
+                || etat.equals(Joueur.PERDU_P3) || etat.equals(Joueur.VAINCQUEUR) || etat.equals(Joueur.SUPVAINCQUEUR)){
+            this.etat = etat;
+        }
+        else {
+            throw new IllegalArgumentException("Mauvais état");
+        }
     }
 
     /**
@@ -92,7 +106,7 @@ public class Joueur{
 
     /**
      * Cette méthode de la classe joueur permet de ajouter le temps de réponse du joueur
-     * @param time
+     * @param time : temps à ajouter
      */
     public void updateTime(final int time){
         this.time += time;
