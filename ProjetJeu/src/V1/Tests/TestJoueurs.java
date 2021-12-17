@@ -13,17 +13,18 @@ public class TestJoueurs {
         joueurs = new Joueurs();
         System.out.println(joueurs);
         List<Joueur> j4 = new ArrayList<Joueur>();
-        for(Joueur joueur:joueurs.selectJoueurs()){
+        joueurs.selectJoueurs();
+        for(Joueur joueur:joueurs.getJoueurs()){
             j4.add(joueur);
         }
         System.out.println(joueurs);
-        for (Joueur j:joueurs.getJ4()) {
+        for (Joueur j:joueurs.getJoueurs()) {
             System.out.println(j);
         }
         joueurs.resJ4();
-        System.out.println(joueurs.getJ4().size());
+        System.out.println(joueurs.getJoueurs().size());
         joueurs.newJ4(j4);
-        for (Joueur j:joueurs.getJ4()) {
+        for (Joueur j:joueurs.getJoueurs()) {
             System.out.println(j);
         }
     }

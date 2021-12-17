@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Joueurs {
     private final static int TOTPLAYERS = 20;
-    private final static int NBRPLAYERS = 4;
-    private final List<Joueur> joueurs = new ArrayList<>(TOTPLAYERS);
-    private final List<Joueur> j4 = new ArrayList<>(NBRPLAYERS);
+    public final static int NBRPLAYERS = 4;
+    private final List<Joueur> participants = new ArrayList<>(TOTPLAYERS);
+    private final List<Joueur> joueurs = new ArrayList<>(NBRPLAYERS);
 
     /**
      * Constructeur de la classe Joueurs
@@ -18,7 +18,7 @@ public class Joueurs {
         Joueur.resetCount();
         if (names.length == TOTPLAYERS) {
             for(String name : names) {
-                joueurs.add(new Joueur(name));
+                participants.add(new Joueur(name));
             }
         }
         else {
@@ -31,30 +31,29 @@ public class Joueurs {
      */
     public Joueurs() {
         Joueur.resetCount();
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < Joueurs.TOTPLAYERS; i++)
         {
-            joueurs.add(new Joueur());
+            participants.add(new Joueur());
         }
     }
 
     /**
      * Cette méthode de la classe Joueurs permet de récupérer la liste des joueurs dans le jeu
      */
-    public List<Joueur> getJ4(){
-        return j4;
+    public List<Joueur> getJoueurs(){
+        return joueurs;
     }
 
     /**
      * Cette méthode de la classe Joueurs permet de choisir 4 joueurs aléatoires
      * Elle permet également de récupérer cette liste
      */
-    public List<Joueur> selectJoueurs() {
-        for (int i = 0; i < 4; i++){
-            int Rdcurr = new Random().nextInt(joueurs.size());
-            j4.add(joueurs.get(Rdcurr));
-            joueurs.remove(Rdcurr);
+    public void selectJoueurs() {
+        for (int i = 0; i < Joueurs.NBRPLAYERS; i++){
+            int Rdcurr = new Random().nextInt(participants.size());
+            joueurs.add(participants.get(Rdcurr));
+            participants.remove(Rdcurr);
         }
-        return getJ4();
     }
 
     /**
@@ -62,7 +61,7 @@ public class Joueurs {
      * Dans le cas du grand jeu où les sont parties successives, cette méthode est utilisé à la fin de chaque partie
      */
     public void resJ4() {
-        j4.clear();
+        joueurs.clear();
     }
 
     /**
@@ -72,22 +71,22 @@ public class Joueurs {
      */
     public void newJ4(final List<Joueur> joueurs){
         resJ4();
-        j4.addAll(joueurs);
+        this.joueurs.addAll(joueurs);
     }
 
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        int i = j4.size();
+        int i = joueurs.size();
         if (i > 0){
-            for (Joueur joueur : j4) {
+            for (Joueur joueur : joueurs) {
                 StringBuilder tmp = i == 1 ? res.append(i).append("er  - ") : res.append(i).append("ème - ");
                 res.append(joueur).append("\n");
                 i--;
             }
         }
         else{
-            for (Joueur joueur: joueurs) {
+            for (Joueur joueur: participants) {
                 res.append(joueur).append("\n");
             }
         }
