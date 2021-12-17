@@ -3,27 +3,32 @@ package V1;
 import java.util.*;
 
 public class Phase1 implements Phase {
-    public void selectionJoueur(final List<Joueur> j4){
-        for (final Joueur joueur : j4) { //changement de l'état des 4 joueurs sélectionnés
-            joueur.updateEtat("sélectionné·e");
-            System.out.println("Player" + joueur.getNum() + " a été sélectionné !");
+    public void selectionJoueur(final Joueurs joueurs){
+        if(joueurs.getJoueurs().isEmpty()){
+            throw new IllegalArgumentException("Liste des joueurs sélectionnés n'est pas encore initialisée.");
+        }
+        else {
+            for (final Joueur joueur : joueurs.getJoueurs()) { //changement de l'état des joueurs sélectionnés
+                joueur.updateEtat(Joueur.SELECTIONE);
+                System.out.println("Player" + joueur.getNum() + " a été sélectionné !");
+            }
         }
     }
 
-    public void deroulerPhaseJeu(final List<Joueur> j4){
+    public void deroulerPhaseJeu(final Joueurs joueurs){
         System.out.println("\n-----------------------Démarrage de la Phase 1-----------------------\n");
         List<String> tmp = new ArrayList<>();
-        tmp = currThemes(tmp, j4); //creation liste qui contient liste traité phase 1
-        currPhase(tmp.get(0), j4, 0); //on lance la 1ere phase avec le premier theme
+        tmp = currThemes(tmp, joueurs.getJoueurs()); //creation liste qui contient liste traité phase 1
+        currPhase(tmp.get(0), joueurs, 0); //on lance la 1ere phase avec le premier theme
     }
 
-    public void currPhase(final String aleaTheme, final List<Joueur> j4, final int i){
+    public void currPhase(final String aleaTheme, final Joueurs joueurs, final int i){
         Questions questionPlayer = new Questions(); //création liste de questions
         createQuestions(questionPlayer, aleaTheme + "1.txt"); //ajout des questions selon thème/difficulté choisis
         System.out.println("Le thème choisi aléatoirement est " + aleaTheme);
         System.out.println("A tour de rôle vous devrez répondre à une question de niveau facile");
 
-        for (final Joueur joueur : j4) { //on itère sur les 4 joueurs
+        for (final Joueur joueur : joueurs.getJoueurs()) { //on itère sur les 4 joueurs
             Question currQuest = questionPlayer.getUneQuestion(); //choisit une question alea pour un joueur
             System.out.println("\nPlayer" + joueur.getNum() + " c'est votre tour" + "\n" + currQuest);
             long startTime = System.currentTimeMillis(); //début timer
@@ -42,7 +47,7 @@ public class Phase1 implements Phase {
                 System.out.println(". Dommage !"); //mauvaise réponse du joueur
             }
         }
-        j4.sort(Comparator.comparingInt(Joueur::getScore).thenComparing(Comparator.comparingInt(Joueur::getTime).reversed()));
+        joueurs.getJoueurs().sort(Comparator.comparingInt(Joueur::getScore).thenComparing(Comparator.comparingInt(Joueur::getTime).reversed()));
         //classement des joueurs selon leur score croissant puis leur temps décroissant si score ex aequo
     }
 
